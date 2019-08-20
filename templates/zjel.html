@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% block body %}
+    <div id="thumbs">
+        <img src="../Images/preview/zjel_01.jpg" class="thumb" id="01" />
+        <img src="../Images/preview/zjel_02.jpg" class="thumb" id="02" />
+        <img src="../Images/preview/zjel_03.jpg" class="thumb" id="03" />
+        <img src="../Images/preview/zjel_04.jpg" class="thumb" id="04" />
+        <img src="../Images/preview/zjel_05.jpg" class="thumb" id="05" />
+        <img src="../Images/preview/zjel_06.jpg" class="thumb" id="06" />
+    </div>
+    <p id="descript">
+        <img id="main_prev" src="../Images/main_prev/zjel_01.jpg" />
+        Though made of brass, its name means, 'chunk of iron'. With the shine of ornate jewelry, and the grip of a motorcycle handlebar--\
+        does a vape get more satisfying? <br />
+        Want the monster grip of the 21700, or the more managable 18650? <br />
+        The Zjelezyaka, has a unique twist on the flat V2.5 style.
+    </p> <!--descript-->
+    <table>
+        <tr>
+            <th>Zjelezyaka</th>
+            <th scope="col">18650</th>
+            <th scope="col">21700</th>
+        </tr>
+        <tr>
+            <th scope="row">V2.5</th>
+            <td>$175  <div class="click_add" id="18650_V_25"><img src="../Images/Cart.png" class="cart"/>
+                      <img src="../Images/Add.png" class="add"/></div><div id="V_25_18650_1" class="dot"></div>
+                      <div id="V_25_18650_2" class="dot"></div><div id="V_25_18650_3" class="dot"></div>
+            </td>
+            <td>$195  <div class="click_add" id="21700_V_25"><img src="../Images/Cart.png" class="cart"/>
+                      <img src="../Images/Add.png" class="add"/></div><div id="V_25_21700_1" class="dot"></div>
+                      <div id="V_25_21700_2" class="dot"></div><div id="V_25_21700_3" class="dot"></div>
+            </td>
+        </tr>
+    </table>
+    <form>
+        <input id="comments" placeholder="comments..." />
+    </form>
+{% endblock %}

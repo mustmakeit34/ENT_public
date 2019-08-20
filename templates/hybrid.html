@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+{% block body %}
+    <div id="thumbs">
+        <img src="../Images/preview/hybrid_01.jpg" class="thumb" id="01" />
+        <img src="../Images/preview/hybrid_02.jpg" class="thumb" id="02" />
+        <img src="../Images/preview/hybrid_03.jpg" class="thumb" id="03" />
+        <img src="../Images/preview/hybrid_04.jpg" class="thumb" id="04" />
+        <img src="../Images/preview/hybrid_05.jpg" class="thumb" id="05" />
+        <img src="../Images/preview/hybrid_06.jpg" class="thumb" id="06" />
+    </div>
+    <p id="descript">
+        <img id="main_prev" src="../Images/main_prev/hybrid_05.jpg" />
+        Peek through to the treasure within. A marvel of beauty and creativity; You won't find the Brass Hybrid at your local Vape shop. <br />
+        Bling it up with the full 21700, or accessorize with the 18650. <br />
+        The V2.5 is symmetrical and straight, exuding a feeling of streamlined strength. <br />
+        With a Bulging button at the base, and a tapering top, the V3 features a comfortable feel, with a flash of elegance.
+    </p> <!--descript-->
+    <table>
+        <tr>
+            <th>Brass Hybrid</th>
+            <th scope="col">18650</th>
+            <th scope="col">21700</th>
+        </tr>
+        <tr>
+            <th scope="row">V2.5</th>
+            <td>$230 <div class="click_add" id="18650_V_25"><img src="../Images/Cart.png" class="cart"/>
+                     <img src="../Images/Add.png" class="add"/></div><div id="V_25_18650_1" class="dot"></div>
+                     <div id="V_25_18650_2" class="dot"></div><div id="V_25_18650_3" class="dot"></div>
+            </td>
+            <td>$250 <div class="click_add" id="21700_V_25"><img src="../Images/Cart.png" class="cart"/>
+                     <img src="../Images/Add.png" class="add"/></div><div id="V_25_21700_1" class="dot"></div>
+                     <div id="V_25_21700_2" class="dot"></div><div id="V_25_21700_3" class="dot"></div>
+            </td>
+        </tr>
+        <tr>
+            <th scope="row">V3</th>
+            <td>$250 <div class="click_add" id="18650_V_3"><img src="../Images/Cart.png" class="cart"/>
+                     <img src="../Images/Add.png" class="add"/></div><div id="V_3_18650_1" class="dot"></div>
+                <div id="V_3_18650_2" class="dot"></div><div id="V_3_18650_3" class="dot"></div>
+            </td>
+            <td>$270 <div class="click_add" id="21700_V_3"><img src="../Images/Cart.png" class="cart"/>
+                     <img src="../Images/Add.png" class="add"/></div><div id="V_3_21700_1" class="dot"></div>
+                <div id="V_3_21700_2" class="dot"></div><div id="V_3_21700_3" class="dot"></div>
+            </td>
+        </tr>
+    </table>
+    <form>
+        <input id="comments" placeholder="comments..." />
+    </form>
+{% endblock %}

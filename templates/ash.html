@@ -1,0 +1,68 @@
+{% extends "base.html" %}
+{% block body %}
+    <div id="thumbs">
+        <img src="../Images/preview/ash_01.jpg" class="thumb" id="01" />
+        <img src="../Images/preview/ash_02.jpg" class="thumb" id="02" />
+        <img src="../Images/preview/ash_03.jpg" class="thumb" id="03" />
+        <img src="../Images/preview/ash_04.jpg" class="thumb" id="04" />
+        <img src="../Images/preview/ash_05.jpg" class="thumb" id="05" />
+        <img src="../Images/preview/ash_06.jpg" class="thumb" id="06" />
+    </div>
+    <p id="descript">
+        <img id="main_prev" src="../Images/main_prev/ash_04.jpg" />
+        Black Ash is a more rare material in the industry. Its dark and sinister weave, set it apart from the standard fare. <br />
+        The Black Ash is worthy of open display(21700), but if you want to keep it in a pocket, you might prefer the 18650 instead. <br />
+        The V2.5 is symmetrical and straight, exuding a feeling of streamlined strength. <br />
+        With a Bulging button at the base, and a tapering top, the V3 features a comfortable feel, with a flash of elegance.
+    </p> <!--descript-->
+    <table>
+        <tr>
+            <th>Black Ash</th>
+            <th scope="col">18650</th>
+            <th scope="col">21700</th>
+        </tr>
+        <tr>
+            <th scope="row">V2.5</th>
+            <td>$280 <div class="click_add" id="18650_V_25"><img src="../Images/Cart.png" class="cart"/>
+                     <img src="../Images/Add.png" class="add"/></div><div id="V_25_18650_1" class="dot"></div>
+                     <div id="V_25_18650_2" class="dot"></div><div id="V_25_18650_3" class="dot"></div>
+            </td>
+            <td>$300 <div class="click_add" id="21700_V_25"><img src="../Images/Cart.png" class="cart"/>
+                     <img src="../Images/Add.png" class="add"/></div><div id="V_25_21700_1" class="dot"></div>
+                     <div id="V_25_21700_2" class="dot"></div><div id="V_25_21700_3" class="dot"></div>
+            </td>
+        </tr>
+        <tr>
+            <th scope="row">V3</th>
+            <td>$300 <div class="click_add" id="18650_V_3"><img src="../Images/Cart.png" class="cart"/>
+                     <img src="../Images/Add.png" class="add"/></div><div id="V_3_18650_1" class="dot"></div>
+                     <div id="V_3_18650_2" class="dot"></div><div id="V_3_18650_3" class="dot"></div>
+            </td>
+            <td>$320 <div class="click_add" id="21700_V_3"><img src="../Images/Cart.png" class="cart"/>
+                     <img src="../Images/Add.png" class="add"/></div><div id="V_3_21700_1" class="dot"></div>
+                     <div id="V_3_21700_2" class="dot"></div><div id="V_3_21700_3" class="dot"></div>
+            </td>
+        </tr>
+    </table>
+    <table id="colors">
+        <tr>
+            <td id="color_1"></td>
+            <td id="color_2"></td>
+            <td id="color_3"></td>
+            <td id="color_4"></td>
+            <td id="color_5"></td>
+            <td id="color_6"></td>
+        </tr>
+        <tr>
+            <td id="color_7"></td>
+            <td id="color_8"></td>
+            <td id="color_9"></td>
+            <td id="color_10"></td>
+            <td id="color_11">No Dye</td>
+            <td id="color_12">Custom</td>
+        </tr>
+    </table>
+    <form>
+        <input id="comments" placeholder="comments..." />
+    </form>
+{% endblock %}

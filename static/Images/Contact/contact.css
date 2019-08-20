@@ -1,0 +1,150 @@
+﻿.list {
+    display: inline;
+    margin-left: 30px;
+    font-size: 34px;
+    font-weight: normal;
+    color: #FFE878;
+    text-shadow: 6px 0px 8px black;
+}
+#whole_thing {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+    width: 1408px;
+}
+#left_panel {
+    float:left;
+    border: 2px solid #FFE878;
+    margin-top: 179px;
+    margin-left: 1px;
+    width: 247px;
+    height: 806px;
+    visibility: hidden;
+}
+#main {
+    display: inline;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+}
+#right_panel {
+    display: inline;
+    border: 2px solid #FFE878;
+    float: right;
+    position: static;
+    width: 247px;
+    height: 806px;
+    right: 258px;
+    margin-top: 179px;
+    visibility: hidden;
+    padding-left: 1px;
+}
+.rightp_img{
+    margin: 0px 0px 21px 2px;
+}
+#marque {
+    margin-top: 10px;
+    border: 2px solid #FFE878;
+    height: 167px;
+    width: 904px;
+}
+body {
+    background-color: #67655e
+}
+
+table {
+    font-size: 25px;
+    border-collapse: collapse;
+}
+th, td {
+    padding: 0px 60px 5px 0px;
+    letter-spacing: 1px;
+    border: 1px solid black;
+}
+th {
+    text-shadow: 0px 4px 10px #FFE878;
+}
+td {
+}
+#body_block {
+    z-index: 7;
+    width: 904px;
+    margin-left: 2px;
+    margin-right: 0px;
+}
+#main_prev{
+    float: right;
+    width: 500px;
+    height: 500px;
+    visibility:hidden;
+    position: relative;
+    left: 4px;
+}
+a {
+    color: black;
+}
+
+#materials {
+    float: right;
+}
+
+#type {
+
+}
+
+p {
+    font-size: 20px;
+    margin-top: 7px;
+    padding-left: 4px;
+    padding-right: 4px;
+    text-shadow: 0px 4px 10px #FFE878;
+}
+
+h1 {
+    margin-top: 10%;
+    font-size: 80px;
+    text-align: right;
+    text-shadow: 1px 1px 1px #FFE878;
+}
+
+h2 {
+    margin-top: 3%;
+    font-size: 80px;
+    text-align: right;
+    text-shadow: 1px 1px 1px #FFE878;
+}
+
+h3 {
+    margin: auto;
+    line-height: 1.2em;
+    font-size: 90px;
+    font-weight: bold;
+    text-shadow: 4px 1px 8px #FFE878;
+    font-family: Zapfino;
+    text-align: center;
+}
+
+h4 {
+    font-size: 26px;
+    margin-bottom: 6px;
+    padding-left: 4px;
+    text-shadow: 4px 1px 8px #FFE878;
+}
+
+.thumb {
+    width: 150px;
+    height: 150px;
+    float: left;
+    padding-right: 0.8px;
+}
+
+#thumbs {
+    max-height: 150px;
+    width: 905px;
+    overflow: hidden;
+}
+
+.type_photo {
+    width: 404px;
+    position: relative;
+}

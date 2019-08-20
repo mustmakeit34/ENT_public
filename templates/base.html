@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+    <title>V3/V2.5, 18650/21700, Maple/Black Ash/Brass Hybrid</title>
+    <meta name="description" content="Ent mods--Maple, Black Ash, Brass Hybrid, 21700, 18650">
+    <link {{ style_sheet }} type="text/css" rel="stylesheet" />
+</head>
+<body>
+<div id="whole_thing">
+    <img id="watermark" src="../Images/black.png">
+    <div id="left_panel">
+        {% block left_panel %}
+        {% endblock left_panel %}
+    </div>
+    <div id="main">
+        <div id="marque">
+            <form id="shipping">
+                Ground $18
+                <input type="radio" name="shipping" value="ground" checked="checked"/>
+                <br>
+                DHL &nbsp;&nbsp;&nbsp;&nbsp;$48
+                <input type="radio" name="shipping" value="dhl"/>
+            </form>
+            <div id="cart">
+                <img id="cart_img" src="../Images/Cart.png">
+                <div id="cart_items"></div>
+                <div id="full">Wholesale on 5+ items;<br>Talk to Yuriy</div>
+            </div>
+            <h3 id="ent">Ent Mods</h3>
+            <ul id="navigate">
+                <li class="list"><a class="list" href="../About/about.html">About</a></li>
+                <li class="list"><a class="list" href="../Products/products.html">Products</a></li>
+                <li class="list"><a class="list" href="../Gallery/gallery.html">Gallery</a></li>
+                <li class="list"><a class="list" href="../Contact/contact.html">Contact</a></li>
+            </ul><!-- #navigate -->
+        </div><!-- #marque -->
+        <div id="body_block">
+            {% block body %}
+            {% endblock %}
+        </div><!--body_block-->
+    </div><!--main-->
+    <div id="right_panel">
+        {% block right_panel %}
+        {% endblock right_panel %}
+    </div>
+    <section id="modal">
+    </section>
+</div><!--whole_thing-->
+<script src="../jquery-3.4.1.min.js"></script>
+<script {{ js_file }}></script>
+</body></html>

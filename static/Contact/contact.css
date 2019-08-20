@@ -1,0 +1,261 @@
+﻿#shipping {
+    position: absolute;
+    left: 653px;
+    top: 50px;
+    font-size: 12.5px;
+    text-shadow: 0px 4px 10px #FFE878;
+    visibility: hidden;
+    z-index:100;
+}
+#full{
+    position: absolute;
+    top: 118px;
+    left: 40px;
+    text-align: right;
+    text-shadow: 0px 4px 10px #FFE878;
+    visibility: hidden;
+}
+#navigate{
+    padding-inline-start: 68px;
+}
+#watermark{
+    position: absolute;
+    z-index: -100;
+    width: 1100px;
+    top: -14px;
+    left: 152px;
+    opacity: 0.3;
+}
+.cart_text{
+    font-size: 12.6px;
+}
+.color_grouping{
+    width: 17px;
+    float: right;
+}
+.cart_item{
+    width: 169px;
+    float: right;
+    height: 30px;
+    cursor: pointer;
+}
+.dot{
+    height: 10px;
+    float: left;
+    position: relative;
+    width: 17px;
+}
+#color_1_2{
+    background-color: #0500ab;
+}
+#color_2_2{
+    background-color: #2bc5ff;
+}
+#color_3_2{
+    background-color: #c80000;
+}
+#color_4_2{
+    background-color: #ff9321;
+}
+#color_5_2{
+    background-color: #5b0089;
+}
+#color_6_2{
+    background-color: #ff00ff;
+}
+#color_7_2{
+    background-color: #0d9000;
+}
+#color_8_2{
+    background-color: #8bff00;
+}
+#color_9_2{
+    background-color: #ffcd00;
+}
+#color_10_2{
+    background-color: #fff827;
+}
+#color_11_2{
+    background-color: #543A27;
+}
+#color_12_2{
+    background-color: #ffffff;
+}
+#colors{
+    width: 400px;
+    height: 50px;
+    font-size: 10px;
+    cursor: pointer;
+    visibility: hidden;
+}
+.cart{
+    width: 30px;
+    height: 28.4px;
+    margin-top: 6px;
+}
+#cart {
+    margin-top: 5px;
+    width: 200px;
+    height: 162px;
+    float: right;
+    position: absolute;
+    right: 3px;
+    overflow-y: auto;
+}
+#cart_img {
+    width: 30px;
+    height: 28.4px;
+    float: left;
+    position: fixed;
+}
+.list {
+    display: inline;
+    margin-left: 30px;
+    font-size: 34px;
+    font-weight: normal;
+    color: #FFE878;
+    text-shadow: 6px 0px 8px black;
+}
+#whole_thing {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+    width: 1408px;
+}
+#left_panel {
+    float:left;
+    border: 2px solid #FFE878;
+    margin-top: 179px;
+    margin-left: 1px;
+    width: 247px;
+    height: 806px;
+    visibility: hidden;
+}
+#main {
+    display: inline;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+}
+#right_panel {
+    display: inline;
+    border: 2px solid #FFE878;
+    float: right;
+    position: static;
+    width: 247px;
+    height: 806px;
+    right: 258px;
+    margin-top: 179px;
+    visibility: hidden;
+    padding-left: 1px;
+}
+.rightp_img{
+    margin: 0px 0px 21px 2px;
+}
+#marque {
+    margin-top: 10px;
+    border: 2px solid #FFE878;
+    height: 167px;
+    width: 904px;
+}
+body {
+    background-color: #67655e;
+    overflow: hidden;
+}
+
+table {
+    font-size: 25px;
+    border-collapse: collapse;
+}
+th, td {
+    padding: 0px 60px 5px 0px;
+    letter-spacing: 1px;
+    border: 1px solid black;
+}
+th {
+    text-shadow: 0px 4px 10px #FFE878;
+}
+td {
+}
+#body_block {
+    z-index: 7;
+    width: 904px;
+    margin-left: 2px;
+    margin-right: 0px;
+}
+#main_prev{
+    float: right;
+    width: 500px;
+    height: 500px;
+    visibility:hidden;
+    position: relative;
+    left: 4px;
+}
+a {
+    color: black;
+}
+
+#materials {
+    float: right;
+}
+
+#type {
+
+}
+
+p {
+    font-size: 20px;
+    margin-top: 7px;
+    padding-left: 4px;
+    padding-right: 4px;
+    text-shadow: 0px 4px 10px #FFE878;
+}
+
+h1 {
+    margin-top: 10%;
+    font-size: 80px;
+    text-align: right;
+    text-shadow: 1px 1px 1px #FFE878;
+}
+
+h2 {
+    margin-top: 3%;
+    font-size: 80px;
+    text-align: right;
+    text-shadow: 1px 1px 1px #FFE878;
+}
+
+h3 {
+    margin: auto;
+    line-height: 1.2em;
+    font-size: 90px;
+    font-weight: bold;
+    text-shadow: 4px 1px 8px #FFE878;
+    font-family: Zapfino;
+    text-align: center;
+}
+
+h4 {
+    font-size: 26px;
+    margin-bottom: 6px;
+    padding-left: 4px;
+    text-shadow: 4px 1px 8px #FFE878;
+}
+
+.thumb {
+    width: 150px;
+    height: 150px;
+    float: left;
+    padding-right: 0.8px;
+}
+
+#thumbs {
+    max-height: 150px;
+    width: 905px;
+    overflow: hidden;
+}
+
+.type_photo {
+    width: 404px;
+    position: relative;
+}
