@@ -8,9 +8,6 @@ from time import time
 
 
 ENT_server = flask.Flask(__name__)
-ENT_server.config['DATABASE'] = 'ENT_db.db'
-ENT_server.config['USERNAME'] = 'uriythedestroyer'
-ENT_server.config['PASSWORD'] =  'youneverguessthis'
 ENT_server.config['SECRET_KEY'] = 'i%fee1@h0m3n0w&uR2blAmE'
 
 @ENT_server.route('/')
@@ -32,7 +29,8 @@ def lets_go(shipping):
 			prices.update({str(num) : mod["price"]})
 	print(ship_these, len(ship_these))
 	template = flask.render_template('modal.html', num_of_items=len(ship_these), item=ship_these, price=prices, shipping=("48.00" if shipping=="fast" else "18.00"))
-	return build_response(template, "js")
+	print(template)
+	return build_response(template,"js")
 
 @ENT_server.route('/<path:html>.html')
 def get_html(html):

@@ -1,13 +1,14 @@
 // V_25
-var size, colors, color_dict, comments, animate_add_1,
+var size, colors, color_dict, animate_add_1,
 animate_add_2, animate_cart, allow_buy;
 colors = [] ;
-comments = "" ;
+var comments = [];
 allow_buy = false ;
 animate_cart = false ;
 animate_add_1 = false ;
 animate_add_2 = false ;
 flag = null ;
+var $comments = $('#comments');
 color_dict = {
     "#0500ab" : 'color_1',
     "#2bc5ff" : 'color_2',
@@ -22,8 +23,24 @@ color_dict = {
     "#543a27" : 'color_11',
     "#ffffff" : 'color_12'
 };
+var $shipping = $('#shipping');
 var teh_cart = document.getElementById("cart_items");
 var $cart_img = $('#cart_img');
+$cart_img.on('click', function(ev){
+    console.log("working");
+    if ($('#cart_items :first-child').data('mod_object')){
+        console.log("this too");
+        var shipping_type = $('#shipping').serializeArray()[0]["value"];
+        console.log(shipping_type);
+        $.ajax({type: "GET",
+                url: (shipping_type=="dhl") ? '../fast.lets_go':'../normal.lets_go',
+                success: function(data){
+                    console.log(data);
+                    $('#modal').append(data);
+                    $('#paypal_form').submit()
+
+        }})
+}});
 
 function evaluate_cart(){
     if ($('#cart_items :first-child').data('mod_object')){
@@ -31,21 +48,21 @@ function evaluate_cart(){
         animate_cart = true;
         allow_buy = true;
         animate_teh_cart();
-        $('#shipping').css('visibility', 'visible')
+        $shipping.css('visibility', 'visible')
     }else{
         $cart_img.css('cursor', 'default');
         animate_cart = false;
         allow_buy = false;
-        $('#shipping').css('visibility', 'hidden')
+        $shipping.css('visibility', 'hidden')
 }}
 function animate_teh_cart(){
     $cart_img.animate({opacity:0.0}, 600, 'swing');
     $cart_img.animate({opacity:1.0}, 600, 'swing', animate_cart ? animate_teh_cart : null);
 }
 teh_cart.addEventListener('DOMSubtreeModified', evaluate_cart, true);
-$('#comments').on('click', function(e) {
+$comments.on('click', function(e) {
      $('#colors').css('visibility', 'visible');
-     $('#comments').css('visibility', 'visible');
+     $comments.css('visibility', 'visible');
      e.stopPropagation();
 });
 $('form').on('submit',function(e) {
@@ -67,23 +84,23 @@ $('.click_add').on('click', function() {
     var zjel_21 = document.getElementById('21700_zjel') ;
     var hybrid_18 =  document.getElementById('18650_hybrid') ;
     var hybrid_21 =  document.getElementById('21700_hybrid') ;
-    if (this != zjel_18 && this != zjel_21 && this != hybrid_18 && this != hybrid_21){
+    if (this !== zjel_18 && this !== zjel_21 && this !== hybrid_18 && this !== hybrid_21){
         $('#colors').css('visibility', 'visible');
     }
-    $('#comments').css('visibility', 'visible');
+    $comments.css('visibility', 'visible');
     event.stopPropagation();
-    if (flag == this && $('#cart_items').children().length < 4 && (colors.length > 0
-        ||this==zjel_18||this==zjel_21||this==hybrid_18||this==hybrid_21)){
+    if (flag === this && $('#cart_items').children().length < 4 && (colors.length > 0
+        ||this===zjel_18||this===zjel_21||this===hybrid_18||this===hybrid_21)){
         animate_add_1 = false;
         animate_add_2 = false;
-        comments = $('#comments').val();
+        comments = $comments.val();
         new_mod = new ENT_Mod() ;
         console.log(new_mod);
         flag = null;
         ship_it(new_mod) ;
-        document.getElementsByTagName('form')[0].reset();
+        $comments.trigger("reset");
         $('#colors').css('visibility', 'hidden') ;
-        $('#comments').css('visibility', 'hidden');
+        $comments.css('visibility', 'hidden');
     }else if (animate_add_1){
         flag = this;
         animate_add_1 = false;
@@ -122,7 +139,7 @@ $('#colors').on('click', function() {
 });
 $(document).on('click', function() {
     $('#colors').css('visibility', 'hidden');
-    $('#comments').css('visibility', 'hidden');
+    $comments.css('visibility', 'hidden');
     animate_add_1 = false;
     animate_add_2 = false;
     size = null;
@@ -291,7 +308,7 @@ function ship_it(mod){
     })
 }
 function create_cart_el(json_data){
-    var mod = json_data
+    var mod = json_data;
     if (! mod){
         $('#cart_items').empty()
     }else{
@@ -312,7 +329,7 @@ function create_cart_el(json_data){
         for (var i=0;i < mod.colors.length; i++){
             color_div = document.createElement('div');
             color_div.className = 'dot';
-            color_div.setAttribute('id', `${color_dict[mod.colors[i]]}_2`)
+            color_div.setAttribute('id', `${color_dict[mod.colors[i]]}_2`);
             color_grouping.appendChild(color_div)
         }
     $(".cart_item").on('click', function(){

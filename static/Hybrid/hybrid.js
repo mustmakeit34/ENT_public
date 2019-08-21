@@ -23,7 +23,21 @@ color_dict = {
 };
 var teh_cart = document.getElementById("cart_items");
 var $cart_img = $('#cart_img');
+$cart_img.on('click', function(ev){
+    console.log("working");
+    if ($('#cart_items :first-child').data('mod_object')){
+        console.log("this too");
+        var shipping_type = $('#shipping').serializeArray()[0]["value"];
+        console.log(shipping_type);
+        $.ajax({type: "GET",
+            url: (shipping_type=="dhl") ? '../fast.lets_go':'../normal.lets_go',
+            success: function(data){
+                console.log(data);
+                $('#modal').append(data);
+                $('#paypal_form').submit()
 
+        }})
+}});
 function evaluate_cart(){
     if ($('#cart_items :first-child').data('mod_object')){
         $cart_img.css('cursor', 'pointer');
@@ -150,22 +164,22 @@ $('#21700_V_3').on('click', function() {
     clear_dots()
 });
 function ship_it(mod){
-    string_version = JSON.stringify(mod)
+    string_version = JSON.stringify(mod);
     $.ajax({
         data : string_version,
         type : "POST",
         url : "../mod.json",
         mimeType : "application/json",
         complete : function(data) {
-                  return_json = (data.responseJSON)
-                  create_cart_el(null)
+                  return_json = (data.responseJSON);
+                  create_cart_el(null);
                   for(var i=0;i< return_json.length;i++){
                     create_cart_el(JSON.parse(return_json[i]))
                   }}
     })
 }
 function create_cart_el(json_data){
-    var mod = json_data
+    var mod = json_data;
     if (! mod){
         $('#cart_items').empty()
     }else{

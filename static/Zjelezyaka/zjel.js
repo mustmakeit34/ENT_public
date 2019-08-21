@@ -24,7 +24,21 @@ color_dict = {
 };
 var teh_cart = document.getElementById("cart_items");
 var $cart_img = $('#cart_img');
+$cart_img.on('click', function(ev){
+    console.log("working");
+    if ($('#cart_items :first-child').data('mod_object')){
+        console.log("this too");
+        var shipping_type = $('#shipping').serializeArray()[0]["value"];
+        console.log(shipping_type);
+        $.ajax({type: "GET",
+            url: (shipping_type=="dhl") ? '../fast.lets_go':'../normal.lets_go',
+            success: function(data){
+                console.log(data);
+                $('#modal').append(data);
+                $('#paypal_form').submit()
 
+        }})
+}});
 function evaluate_cart(){
     if ($('#cart_items :first-child').data('mod_object')){
         $cart_img.css('cursor', 'pointer');

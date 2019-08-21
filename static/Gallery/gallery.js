@@ -13,10 +13,27 @@ color_dict = {
     "#543a27" : 'color_11',
     "#ffffff" : 'color_12'
 };
+var teh_cart = document.getElementById("cart_items");
+var $cart_img = $('#cart_img');
 $('.thumb').on('mouseover click', function () {
     $main_img = $('#main_prev');
     $main_img.attr('src', `../Images/gallery/gallery_${this.id}.jpg`)
 });
+$cart_img.on('click', function(ev){
+    console.log("working");
+    if ($('#cart_items :first-child').data('mod_object')){
+        console.log("this too");
+        var shipping_type = $('#shipping').serializeArray()[0]["value"];
+        console.log(shipping_type);
+        $.ajax({type: "GET",
+            url: (shipping_type=="dhl") ? '../fast.lets_go':'../normal.lets_go',
+            success: function(data){
+                console.log(data);
+                $('#modal').append(data);
+                $('#paypal_form').submit()
+
+        }})
+}});
 function create_cart_el(json_data){
     var mod = json_data;
     if (! mod){
@@ -74,8 +91,7 @@ $(function(){
                   }}
     })
 });
-var teh_cart = document.getElementById("cart_items");
-var $cart_img = $('#cart_img');
+
 
 
 function evaluate_cart(){
