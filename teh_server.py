@@ -9,7 +9,7 @@ from time import time
 
 ENT_server = flask.Flask(__name__)
 ENT_server.config['DATABASE'] = 'ENT_db.db'
-ENT_server.config['USERNAME'] = 'urithedestroyer'
+ENT_server.config['USERNAME'] = 'uriythedestroyer'
 ENT_server.config['PASSWORD'] =  'youneverguessthis'
 ENT_server.config['SECRET_KEY'] = 'i%fee1@h0m3n0w&uR2blAmE'
 
@@ -17,13 +17,30 @@ ENT_server.config['SECRET_KEY'] = 'i%fee1@h0m3n0w&uR2blAmE'
 def home_redirect():
 	return flask.redirect('/Products/products.html')
 
+@ENT_server.route('/<path:shipping>.lets_go')
+def lets_go(shipping):
+	session_id = session.get('id', None)
+	mods = sql_read("SELECT item_1, item_2, item_3, item_4 FROM cart WHERE s_id=?", session_id)
+	mods = mods[0]
+	ship_these = {}
+	prices = {}
+	print(mods)
+	for num, mod in enumerate(mods):
+		if mod:
+			mod = flask.json.loads(mod)
+			ship_these.update({str(num):mod["size"] + "||" + mod["material"] + "||" + mod["style"]})
+			prices.update({str(num) : mod["price"]})
+	print(ship_these, len(ship_these))
+	template = flask.render_template('modal.html', num_of_items=len(ship_these), item=ship_these, price=prices, shipping=("48.00" if shipping=="fast" else "18.00"))
+	return build_response(template, "js")
+
 @ENT_server.route('/<path:html>.html')
 def get_html(html):
 	session_id = session.get('id', None)
 	user_ip = request.environ['REMOTE_ADDR']
 	try_it = None
 	if session_id:
-		try_it = sql_read("SELECT * FROM cart WHERE s_id=?", session_id)
+		try_it = sql_read("SELECT item_1, item_2, item_3, item_4 FROM cart WHERE s_id=?", session_id)
 		try_it = try_it[0]
 	if not session_id or not try_it:
 		new_user = next(user_gen)
