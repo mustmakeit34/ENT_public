@@ -5,6 +5,8 @@ from ENT_assets import build_response, html_dict, user_gen, sql_write, sql_read,
 from flask import session, request, escape
 import sqlite3
 from time import time
+from waitress import serve
+
 
 
 ENT_server = flask.Flask(__name__)
@@ -118,4 +120,4 @@ def handle_mod(mod):
 if not exists('ENT_db.db'):
 	init_table()
 
-ENT_server.run(host="0.0.0.0")
+serve(ENT_server, host='0.0.0.0', port=8080)
