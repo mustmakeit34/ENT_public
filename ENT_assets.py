@@ -1,7 +1,7 @@
 import flask
 import sqlite3
 
-html_dict = {'About/about': "about", 'Products/products': "products",
+html_dict = {'About/about': "about", 'Products/Products': "Products",
              'Gallery/gallery': "gallery", 'Contact/contact': "contact",
              'Maple/maple': "maple", 'Ash/ash': "ash",
              'Hybrid/hybrid': "hybrid", 'Zjelezyaka/zjel': "zjel",
