@@ -52,27 +52,27 @@ def get_html(html):
 
 @ENT_server.route('/<path:css>.css')
 def get_css(css):
-	template = flask.send_file(f'static\\{css}.css', mimetype='text/css')
+	template = flask.send_file(f'static/{css}.css', mimetype='text/css')
 	return build_response(template, "css")
 
 @ENT_server.route('/<path:js>.js')
 def get_js(js):
-	template = flask.send_file(f'static\\{js}.js', mimetype='text/javascript')
+	template = flask.send_file(f'static/{js}.js', mimetype='text/javascript')
 	return build_response(template, "js")
 
 @ENT_server.route('/<path:image>.jpeg')
 def get_jpeg(image):
-	template = flask.send_file(f'static\\{image}.jpeg', mimetype='image/jpeg')
+	template = flask.send_file(f'static/{image}.jpeg', mimetype='image/jpeg')
 	return build_response(template, "img")
 
 @ENT_server.route('/<path:image>.jpg')
 def get_jpg(image):
-	template = flask.send_file(f'static\\{image}.jpg', mimetype='image/jpeg')
+	template = flask.send_file(f'static/{image}.jpg', mimetype='image/jpeg')
 	return build_response(template, "img")
 
 @ENT_server.route('/<path:image>.png')
 def get_png(image):
-	template = flask.send_file(f'static\\{image}.png', mimetype='image/png')
+	template = flask.send_file(f'static/{image}.png', mimetype='image/png')
 	return build_response(template, "img")
 
 @ENT_server.route('/<path:mod>.json', methods=['POST'])
@@ -118,4 +118,4 @@ def handle_mod(mod):
 if not exists('ENT_db.db'):
 	init_table()
 
-ENT_server.run(host='0.0.0.0')
+ENT_server.run()
