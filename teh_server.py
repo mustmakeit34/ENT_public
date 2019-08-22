@@ -119,4 +119,4 @@ if not exists('ENT_db.db'):
 	init_table()
 
 
-ENT_server.run()
+ENT_server.run(ssl_context=('cert.pem', 'key.pem'))

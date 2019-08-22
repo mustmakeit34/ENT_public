@@ -159,8 +159,8 @@ $(function(){
         url : "../give_me.json",
         mimeType : "application/json",
         complete : function(data) {
-                  return_json = (data.responseJSON)
-                  create_cart_el(null)
+                  return_json = (data.responseJSON);
+                  create_cart_el(null);
                   for(var i=0;i< return_json.length;i++){
                     create_cart_el(JSON.parse(return_json[i]))
                   }}
