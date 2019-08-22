@@ -95,10 +95,10 @@ function preview_vape() {
         rightp_load(right_panel, "zjel");
     } else if (this == V_3) {
         leftp_load(left_panel, "", "", "", "")
-        rightp_load(right_panel, "v_3")
+        rightp_load(right_panel, "V_3")
     } else if (this == V_25) {
         leftp_load(left_panel, "", "", "", "")
-        rightp_load(right_panel, "v_25")
+        rightp_load(right_panel, "V_25")
     }
     left_panel.style.visibility = 'visible';
     right_panel.style.visibility = 'visible';

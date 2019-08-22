@@ -133,35 +133,30 @@ $(document).on('click', function() {
     style = null;
     price = null;
     colors = [];
-    clear_dots()
 });
 $('#18650_V_25').on('click', function() {
     size = "18650";
     material = "hybrid";
     style = "V_25";
     price = 230;
-    clear_dots()
 });
 $('#21700_V_25').on('click', function() {
     size = "21700";
     material = "hybrid";
     style = "V_25";
     price = 250;
-    clear_dots()
 });
 $('#18650_V_3').on('click', function() {
     size = "18650";
     material = "hybrid";
     style = "V_3";
     price = 250;
-    clear_dots()
 });
 $('#21700_V_3').on('click', function() {
     size = "21700";
     material = "hybrid";
     style = "V_3";
     price = 270;
-    clear_dots()
 });
 function ship_it(mod){
     string_version = JSON.stringify(mod);
