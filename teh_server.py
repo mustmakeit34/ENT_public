@@ -118,4 +118,4 @@ def handle_mod(mod):
 if not exists('ENT_db.db'):
 	init_table()
 
-ENT_server.run(host='0.0.0.0:1000')
+ENT_server.run(host='0.0.0.0:10000')
