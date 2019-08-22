@@ -12,7 +12,7 @@ ENT_server.config['SECRET_KEY'] = 'i%fee1@h0m3n0w&uR2blAmE'
 
 @ENT_server.route('/')
 def home_redirect():
-	return flask.redirect('/Products/Products.html')
+	return flask.redirect('/Products/products.html')
 
 @ENT_server.route('/<path:shipping>.lets_go')
 def lets_go(shipping):
