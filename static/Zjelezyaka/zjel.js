@@ -1,6 +1,6 @@
 // Zjelezyaka
-var size, colors, color_dict, comments, animate_add_1, materials, style, flag,
-animate_add_2, animate_cart, allow_buy;
+var size, colors, color_dict, comments, animate_add_1, materials, style, flag, main_2, main_3,
+main_4, main_5, main_6, animate_add_2, animate_cart, allow_buy;
 comments = "" ;
 colors = [] ;
 allow_buy = false ;
@@ -86,7 +86,7 @@ $('.click_add').on('click', function() {
         console.log(new_mod);
         ship_it(new_mod);
         flag = null;
-        document.getElementsByTagName('form')[0].reset();
+        document.getElementsByTagName('form')[1].reset();
         $('#comments').css('visibility', 'hidden');
     }else if (animate_add_1){
         flag = this;
@@ -219,4 +219,11 @@ $(function(){
                     create_cart_el(JSON.parse(return_json[i]))
                   }}
     })
+});
+$(function(){
+    $.get('../Images/main_prev/zjel_02.jpg', function(){main_2 = this});
+    $.get('../Images/main_prev/zjel_03.jpg', function(){main_3 = this});
+    $.get('../Images/main_prev/zjel_04.jpg', function(){main_4 = this});
+    $.get('../Images/main_prev/zjel_05.jpg', function(){main_5 = this});
+    $.get('../Images/main_prev/zjel_06.jpg', function(){main_6 = this});
 });

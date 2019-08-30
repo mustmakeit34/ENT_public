@@ -98,7 +98,7 @@ $('.click_add').on('click', function() {
         console.log(new_mod);
         flag = null;
         ship_it(new_mod) ;
-        $comments.trigger("reset");
+        document.getElementsByTagName('form')[1].reset();
         $('#colors').css('visibility', 'hidden') ;
         $comments.css('visibility', 'hidden');
     }else if (animate_add_1){
@@ -364,4 +364,11 @@ $(function(){
                     create_cart_el(JSON.parse(return_json[i]))
                   }}
     })
+});
+$(function(){
+    $.get('../Images/main_prev/V_25_01.jpg', function(){main_1 = this});
+    $.get('../Images/main_prev/V_25_02.jpg', function(){main_2 = this});
+    $.get('../Images/main_prev/V_25_04.jpg', function(){main_4 = this});
+    $.get('../Images/main_prev/V_25_05.jpg', function(){main_5 = this});
+    $.get('../Images/main_prev/V_25_06.jpg', function(){main_6 = this});
 });

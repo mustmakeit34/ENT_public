@@ -1,4 +1,9 @@
 // About
+var main_left_1_1, main_left_1_2, main_left_1_3, main_left_2_1, main_left_2_2, main_left_2_3, main_left_3_1,
+main_left_3_2, main_left_3_3, main_right_1_1, main_right_1_2, main_right_1_3, main_right_2_1,
+main_right_2_2, main_right_2_3, main_right_3_1, main_right_3_2, main_right_3_3;
+var teh_cart = document.getElementById("cart_items");
+var $cart_img = $('#cart_img');
 
 left_panel = document.getElementById('left_panel');
 right_panel = document.getElementById('right_panel');
@@ -109,9 +114,6 @@ $(function(){
                   }}
     })
 });
-var teh_cart = document.getElementById("cart_items");
-var $cart_img = $('#cart_img');
-
 
 function evaluate_cart(){
     if ($('#cart_items :first-child').data('mod_object')){
@@ -131,3 +133,23 @@ function animate_teh_cart(){
     $cart_img.animate({opacity:1.0}, 600, 'swing', animate_cart ? animate_teh_cart : null);
 }
 teh_cart.addEventListener('DOMSubtreeModified', evaluate_cart, true);
+$(function(){
+    $.get('../Images/bio/main_01_left_01.jpg', function(){main_left_1_1 = this});
+    $.get('../Images/bio/main_01_left_02.jpg', function(){main_left_1_2 = this});
+    $.get('../Images/bio/main_01_left_03.jpg', function(){main_left_1_3 = this});
+    $.get('../Images/bio/main_02_left_01.jpg', function(){main_left_2_1 = this});
+    $.get('../Images/bio/main_02_left_02.jpg', function(){main_left_2_2 = this});
+    $.get('../Images/bio/main_02_left_03.jpg', function(){main_left_2_3 = this});
+    $.get('../Images/bio/main_03_left_01.jpg', function(){main_left_3_1 = this});
+    $.get('../Images/bio/main_03_left_02.jpg', function(){main_left_3_2 = this});
+    $.get('../Images/bio/main_03_left_03.jpg', function(){main_left_3_3 = this});
+    $.get('../Images/bio/main_01_right_01.jpg', function(){main_right_1_1 = this});
+    $.get('../Images/bio/main_01_right_02.jpg', function(){main_right_1_2 = this});
+    $.get('../Images/bio/main_01_right_03.jpg', function(){main_right_1_3 = this});
+    $.get('../Images/bio/main_02_right_01.jpg', function(){main_right_2_1 = this});
+    $.get('../Images/bio/main_02_right_02.jpg', function(){main_right_2_2 = this});
+    $.get('../Images/bio/main_02_right_03.jpg', function(){main_right_2_3 = this});
+    $.get('../Images/bio/main_03_right_01.jpg', function(){main_right_3_1 = this});
+    $.get('../Images/bio/main_03_right_02.jpg', function(){main_right_3_2 = this});
+    $.get('../Images/bio/main_03_right_03.jpg', function(){main_right_3_3 = this});
+});

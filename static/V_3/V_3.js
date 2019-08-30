@@ -81,7 +81,7 @@ $('.click_add').on('click', function() {
         new_mod = new ENT_Mod();
         console.log(new_mod);
         ship_it(new_mod);
-        document.getElementsByTagName('form')[0].reset();
+        document.getElementsByTagName('form')[1].reset();
         $('#colors').css('visibility', 'hidden');
         $('#comments').css('visibility', 'hidden');
     }else if (animate_add_1){
@@ -191,74 +191,74 @@ $('#21700_hybrid').on('click', function() {
 $('#color_1').on('click', function() {
     if (colors.includes("#543a27")){clear_dots()}
     if (!colors.includes("#0500ab") && colors.length < 3){colors.push("#0500ab")
-    }else if (colors.includes("#0500ab")){colors.splice(colors.indexOf("#0500ab"),1)};
+    }else if (colors.includes("#0500ab")){colors.splice(colors.indexOf("#0500ab"),1)}
     apply_dots(`${material}_${size}`);
 });
 $('#color_2').on('click', function() {
     if (colors.includes("#543a27")){clear_dots()}
     if (!colors.includes("#2bc5ff") && colors.length < 3){colors.push("#2bc5ff")
-    }else if (colors.includes("#2bc5ff")){colors.splice(colors.indexOf("#2bc5ff"),1)};
+    }else if (colors.includes("#2bc5ff")){colors.splice(colors.indexOf("#2bc5ff"),1)}
     apply_dots(`${material}_${size}`);
 });
 $('#color_3').on('click', function() {
     if (colors.includes("#543a27")){clear_dots()}
     if (!colors.includes("#c80000") && colors.length < 3){colors.push("#c80000")
-    }else if (colors.includes("#c80000")){colors.splice(colors.indexOf("#c80000"),1)};
+    }else if (colors.includes("#c80000")){colors.splice(colors.indexOf("#c80000"),1)}
     apply_dots(`${material}_${size}`);
 });
 $('#color_4').on('click', function() {
     if (colors.includes("#543a27")){clear_dots()}
     if (!colors.includes("#ff9321") && colors.length < 3){colors.push("#ff9321")
-    }else if (colors.includes("#ff9321")){colors.splice(colors.indexOf("#ff9321"),1)};
+    }else if (colors.includes("#ff9321")){colors.splice(colors.indexOf("#ff9321"),1)}
     apply_dots(`${material}_${size}`);
 });
 $('#color_5').on('click', function() {
     if (colors.includes("#543a27")){clear_dots()}
     if (!colors.includes("#5b0089") && colors.length < 3){colors.push("#5b0089")
-    }else if (colors.includes("#5b0089")){colors.splice(colors.indexOf("#5b0089"),1)};
+    }else if (colors.includes("#5b0089")){colors.splice(colors.indexOf("#5b0089"),1)}
     apply_dots(`${material}_${size}`);
 });
 $('#color_6').on('click', function() {
     if (colors.includes("#543a27")){clear_dots()}
     if (!colors.includes("#ff00ff") && colors.length < 3){colors.push("#ff00ff")
-    }else if (colors.includes("#ff00ff")){colors.splice(colors.indexOf("#ff00ff"),1)};
+    }else if (colors.includes("#ff00ff")){colors.splice(colors.indexOf("#ff00ff"),1)}
     apply_dots(`${material}_${size}`);
 });
 $('#color_7').on('click', function() {
     if (colors.includes("#543a27")){clear_dots()}
     if (!colors.includes("#0d9000") && colors.length < 3){colors.push("#0d9000")
-    }else if (colors.includes("#0d9000")){colors.splice(colors.indexOf("#0d9000"),1)};
+    }else if (colors.includes("#0d9000")){colors.splice(colors.indexOf("#0d9000"),1)}
     apply_dots(`${material}_${size}`);
 });
 $('#color_8').on('click', function() {
     if (colors.includes("#543a27")){clear_dots()}
     if (!colors.includes("#8bff00") && colors.length < 3){colors.push("#8bff00")
-    }else if (colors.includes("#8bff00")){colors.splice(colors.indexOf("#8bff00"),1)};
+    }else if (colors.includes("#8bff00")){colors.splice(colors.indexOf("#8bff00"),1)}
     apply_dots(`${material}_${size}`);
 });
 $('#color_9').on('click', function() {
     if (colors.includes("#543a27")){clear_dots()}
     if (!colors.includes("#ffcd00") && colors.length < 3){colors.push("#ffcd00")
-    }else if (colors.includes("#ffcd00")){colors.splice(colors.indexOf("#ffcd00"),1)};
+    }else if (colors.includes("#ffcd00")){colors.splice(colors.indexOf("#ffcd00"),1)}
     apply_dots(`${material}_${size}`);
 });
 $('#color_10').on('click', function() {
     if (colors.includes("#543a27")){clear_dots()}
     if (!colors.includes("#fff827") && colors.length < 3){colors.push("#fff827")
-    }else if (colors.includes("#fff827")){colors.splice(colors.indexOf("#fff827"),1)};
+    }else if (colors.includes("#fff827")){colors.splice(colors.indexOf("#fff827"),1)}
     apply_dots(`${material}_${size}`);
 });
 $('#color_11').on('click', function() {
     if (!colors.includes("#543a27")){
         clear_dots();
         colors.push("#543a27")
-    }else if (colors.includes("#543a27")){colors.splice(colors.indexOf("#543a27"),1)};
+    }else if (colors.includes("#543a27")){colors.splice(colors.indexOf("#543a27"),1)}
     apply_dots(`${material}_${size}`);
 });
 $('#color_12').on('click', function() {
     if (colors.includes("#543a27")){clear_dots()}
     if (!colors.includes("#ffffff")){colors.push("#ffffff")
-    }else if (colors.includes("#ffffff")){colors.splice(colors.indexOf("#ffffff"),1)};
+    }else if (colors.includes("#ffffff")){colors.splice(colors.indexOf("#ffffff"),1)}
     apply_dots(`${material}_${size}`);
 });
 function apply_dots(dot_id){
@@ -342,4 +342,11 @@ $(function(){
                     create_cart_el(JSON.parse(return_json[i]))
                   }}
     })
+});
+$(function(){
+    $.get('../Images/main_prev/V_3_02.jpg', function(){main_2 = this});
+    $.get('../Images/main_prev/V_3_03.jpg', function(){main_3 = this});
+    $.get('../Images/main_prev/V_3_04.jpg', function(){main_4 = this});
+    $.get('../Images/main_prev/V_3_05.jpg', function(){main_5 = this});
+    $.get('../Images/main_prev/V_3_06.jpg', function(){main_6 = this});
 });

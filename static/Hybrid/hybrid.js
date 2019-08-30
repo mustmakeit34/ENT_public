@@ -1,5 +1,5 @@
 // Hybrid
-var size,  colors, color_dict, animate_add_1, materials,
+var size,  colors, color_dict, animate_add_1, materials, main_1, main_2, main_3, main_4, main_6,
 animate_add_2, animate_cart, allow_buy;
 colors = [];
 comments = [];
@@ -23,7 +23,7 @@ color_dict = {
 };
 var teh_cart = document.getElementById("cart_items");
 var $cart_img = $('#cart_img');
-$cart_img.on('click', function(ev){
+$cart_img.on('click', function(){
     console.log("working");
     if ($('#cart_items :first-child').data('mod_object')){
         console.log("this too");
@@ -85,7 +85,7 @@ $('.click_add').on('click', function() {
         console.log(new_mod);
         ship_it(new_mod);
         flag = null;
-        document.getElementsByTagName('form')[0].reset();
+        document.getElementsByTagName('form')[1].reset();
         $('#comments').css('visibility', 'hidden');
     }else if (animate_add_1){
         flag = this;
@@ -207,8 +207,8 @@ function create_cart_el(json_data){
                 url : "../remove.json",
                 mimeType : "application/json",
                 complete : function(data) {
-                          return_json = (data.responseJSON)
-                          create_cart_el(null)
+                          return_json = (data.responseJSON);
+                          create_cart_el(null);
                           for(var i=0;i< return_json.length;i++){
                             create_cart_el(JSON.parse(return_json[i]))
                           }}
@@ -224,10 +224,17 @@ $(function(){
         url : "../give_me.json",
         mimeType : "application/json",
         complete : function(data) {
-                  return_json = (data.responseJSON)
-                  create_cart_el(null)
+                  return_json = (data.responseJSON);
+                  create_cart_el(null);
                   for(var i=0;i< return_json.length;i++){
                     create_cart_el(JSON.parse(return_json[i]))
                   }}
     })
+});
+$(function(){
+    $.get('../Images/main_prev/hybrid_01.jpg', function(){main_1 = this});
+    $.get('../Images/main_prev/hybrid_02.jpg', function(){main_2 = this});
+    $.get('../Images/main_prev/hybrid_03.jpg', function(){main_3 = this});
+    $.get('../Images/main_prev/hybrid_04.jpg', function(){main_4 = this});
+    $.get('../Images/main_prev/hybrid_06.jpg', function(){main_6 = this});
 });

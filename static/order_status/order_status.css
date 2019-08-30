@@ -1,4 +1,4 @@
-﻿#shipping {
+#shipping {
     position: absolute;
     left: 653px;
     top: 50px;
@@ -28,10 +28,6 @@
 }
 .cart_text{
     font-size: 12.6px;
-    width: 161px;
-    margin-top: 7px;
-    padding-left: 4px;
-    padding-right: 4px;
 }
 .color_grouping{
     width: 17px;
@@ -84,6 +80,13 @@
 }
 #color_12_2{
     background-color: #ffffff;
+}
+#colors{
+    width: 400px;
+    height: 50px;
+    font-size: 10px;
+    cursor: pointer;
+    visibility: hidden;
 }
 .cart{
     width: 30px;
@@ -144,11 +147,9 @@
     right: 258px;
     margin-top: 179px;
     visibility: hidden;
-    margin-right: 1px;
+    padding-left: 1px;
 }
-.panel_pics {
-    width: 243px;
-    height: 243px;
+.rightp_img{
     margin: 0px 0px 21px 2px;
 }
 #marque {
@@ -162,6 +163,15 @@ body {
     overflow: hidden;
 }
 
+table {
+    font-size: 25px;
+    border-collapse: collapse;
+}
+th, td {
+    padding: 0px 60px 5px 0px;
+    letter-spacing: 1px;
+    border: 1px solid black;
+}
 th {
     text-shadow: 0px 4px 10px #FFE878;
 }
@@ -173,6 +183,14 @@ td {
     margin-left: 2px;
     margin-right: 0px;
 }
+#main_prev{
+    float: right;
+    width: 500px;
+    height: 500px;
+    visibility:hidden;
+    position: relative;
+    left: 4px;
+}
 a {
     color: black;
 }
@@ -181,14 +199,31 @@ a {
     float: right;
 }
 
-p {
-    font-size: 24px;
-    padding-left:7px;
-    text-shadow: 0px 4px 10px #FFE878;
-    margin-top: 0;
-    width: 600px;
+#type {
+
 }
 
+p {
+    font-size: 20px;
+    margin-top: 7px;
+    padding-left: 4px;
+    padding-right: 4px;
+    text-shadow: 0px 4px 10px #FFE878;
+}
+
+h1 {
+    margin-top: 10%;
+    font-size: 80px;
+    text-align: right;
+    text-shadow: 1px 1px 1px #FFE878;
+}
+
+h2 {
+    margin-top: 3%;
+    font-size: 80px;
+    text-align: right;
+    text-shadow: 1px 1px 1px #FFE878;
+}
 
 h3 {
     margin: auto;
@@ -200,15 +235,24 @@ h3 {
     text-align: center;
 }
 
-.main_img {
-    width: 266px;
-    height: 266px;
+h4 {
+    font-size: 26px;
+    margin-bottom: 6px;
+    padding-left: 4px;
+    text-shadow: 4px 1px 8px #FFE878;
 }
 
-#main_pics {
-    width: 266px;
-    float: right;
-    position: relative;
+.thumb {
+    width: 150px;
+    height: 150px;
+    float: left;
+    padding-right: 0.8px;
+}
+
+#thumbs {
+    max-height: 150px;
+    width: 905px;
+    overflow: hidden;
 }
 
 .type_photo {

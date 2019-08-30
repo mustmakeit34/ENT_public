@@ -1,4 +1,6 @@
 // Gallery
+var main_1, main_2, main_3, main_4, main_5, main_6, main_7, main_8, main_9, main_10, main_11,
+main_12, main_13, main_14;
 color_dict = {
     "#0500ab" : 'color_1',
     "#2bc5ff" : 'color_2',
@@ -112,3 +114,19 @@ function animate_teh_cart(){
     $cart_img.animate({opacity:1.0}, 600, 'swing', animate_cart ? animate_teh_cart : null);
 }
 teh_cart.addEventListener('DOMSubtreeModified', evaluate_cart, true);
+$(function(){
+    $.get('../Images/gallery/gallery_01.jpg', function(){main_1 = this});
+    $.get('../Images/gallery/gallery_02.jpg', function(){main_2 = this});
+    $.get('../Images/gallery/gallery_03.jpg', function(){main_3 = this});
+    $.get('../Images/gallery/gallery_04.jpg', function(){main_4 = this});
+    $.get('../Images/gallery/gallery_05.jpg', function(){main_5 = this});
+    $.get('../Images/gallery/gallery_06.jpg', function(){main_6 = this});
+    $.get('../Images/gallery/gallery_07.jpg', function(){main_7 = this});
+    $.get('../Images/gallery/gallery_08.jpg', function(){main_8 = this});
+    $.get('../Images/gallery/gallery_09.jpg', function(){main_9 = this});
+    $.get('../Images/gallery/gallery_10.jpg', function(){main_10 = this});
+    $.get('../Images/gallery/gallery_11.jpg', function(){main_11 = this});
+    $.get('../Images/gallery/gallery_12.jpg', function(){main_12 = this});
+    $.get('../Images/gallery/gallery_13.jpg', function(){main_13 = this});
+    $.get('../Images/gallery/gallery_14.jpg', function(){main_14 = this});
+});
