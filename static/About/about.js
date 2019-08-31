@@ -11,7 +11,7 @@ var is_mobile = jQuery.browser.mobile;
 
 left_panel = document.getElementById('left_panel');
 right_panel = document.getElementById('right_panel');
-$('.main_img').on('mouseover', function () {
+$('.main_img').on('mouseover', (is_mobile) ? null : function () {
     $left_01 = $('#left_01');
     $left_01.attr('src', `../Images/bio/main_${this.id}_left_01.jpg`);
     $left_02 = $('#left_02');
@@ -42,11 +42,6 @@ color_dict = {
     "#543a27" : 'color_11',
     "#ffffff" : 'color_12'
 };
-$('.thumb').on('mouseover click', (is_mobile) ? null: function () {
-    $main_img = $('#main_prev');
-    $main_img.attr('src', `../Images/gallery/gallery_${this.id}.jpg`);
-    $main_img.css('visibility', 'visible')
-});
 $cart_img.on('click', function(ev){
     console.log("working");
     if ($('#cart_items :first-child').data('mod_object')){
