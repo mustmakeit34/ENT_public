@@ -1,6 +1,6 @@
 import flask
 from ENT_sql import init_cart, init_paid, sql_write, sql_read
-from ENT_assets import build_response, html_dict, user_gen, column_dict, price_dict, transact_gen
+from ENT_assets import build_response, html_dict, user_gen, column_dict, price_dict, transact_gen, send_message
 from flask import session, request, jsonify
 from flask.json import loads, tojson_filter
 from time import time, sleep
@@ -122,13 +122,18 @@ def ipn():
 					    user_id
 				)
 			except Exception as e:
-				with open('/tmp/ipnout.txt', 'a') as f:
-					data = 'ERROR WITH IPN DATA\n' + str(values) + '\n'
-					f.write(data)
+				pass
+			# 	with open('/tmp/ipnout.txt', 'a') as f:
+			# 		data = 'ERROR WITH IPN DATA\n' + str(values) + '\n'
+			# 		f.write(data)
+			#
+			#
+			# with open('/tmp/ipnout.txt', 'a') as f:
+			# 	data = 'SUCCESS\n' + str(values) + '\n'
+			# 	f.write(data)
 			
-			with open('/tmp/ipnout.txt', 'a') as f:
-				data = 'SUCCESS\n' + str(values) + '\n'
-				f.write(data)
+			send_message("ipn notification", str(values))
+	
 	except Exception as e:
 		pass
 

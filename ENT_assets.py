@@ -1,5 +1,6 @@
 import flask
 import sqlite3
+import requests
 
 html_dict = {'About/about': "about", 'Products/products': "products",
              'Gallery/gallery': "gallery", 'Contact/contact': "contact",
@@ -20,6 +21,16 @@ price_dict = {
 	"18650mapleV_25" : 230, "18650mapleV_3" : 250, "18650ashV_25" : 280, "18650ashV_3" : 300,
 	"18650hybridV_25" : 230, "18650hybridV_3" : 250, "18650zjelV_25" : 175,
 }
+
+def send_message(subject:str, message:str):
+	return requests.post(
+		"https://api.mailgun.net/v3/entmods.com/messages",
+		auth=("api", "bff8039efba526de79981492d046c01b-19f318b0-c354ff42"),
+		data={"from": "Excited User <mailgun@entmods.com>",
+		      "to": "support@entmods.com",
+		      "subject": subject,
+		      "text": message}
+	)
 
 def build_response(built_template, el_type_str):
 	if el_type_str == "html":
