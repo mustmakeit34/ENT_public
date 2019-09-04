@@ -32,7 +32,7 @@ def ipn():
 		for x, y in values.iteritems():
 			arg += "&{x}={y}".format(x=x,y=y)
 		
-		validate_url = 'https://www.sandbox.paypal.com/cgi-bin/websc?cmd=_notify-validate{arg}'.format(arg=arg)
+		validate_url = 'https://sandbox.paypal.com/cgi-bin/websc?cmd=_notify-validate{arg}'.format(arg=arg)
 		r = requests.get(validate_url)
 		if r.text == 'VERIFIED':
 			try:
