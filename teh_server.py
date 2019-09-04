@@ -25,6 +25,7 @@ def home_redirect():
 
 @ENT_server.route('/ipn/',methods=['POST', 'GET'])
 def ipn():
+	send_message("ipn notification", "ipn notification started")
 	try:
 		arg = ''
 		request.parameter_storage_class = ImmutableMultiDict
