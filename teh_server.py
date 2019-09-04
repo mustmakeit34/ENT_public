@@ -23,7 +23,7 @@ def give_status():
 def home_redirect():
 	return flask.redirect('/Products/products.html')
 
-@ENT_server.route('/ipn/',methods=['POST'])
+@ENT_server.route('/ipn/',methods=['POST', 'GET'])
 def ipn():
 	try:
 		arg = ''
