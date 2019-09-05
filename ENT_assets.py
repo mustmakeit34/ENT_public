@@ -13,17 +13,17 @@ column_dict = {"1": "UPDATE cart SET item_1=? WHERE s_id=?",
 	           "3": "UPDATE cart SET item_3=? WHERE s_id=?",
 	           "4": "UPDATE cart SET item_4=? WHERE s_id=?"}
 
-color_dict = {"#0500ab" : 'dark blue #0500ab',
-	          "#2bc5ff" : 'sky blue #2bc5ff',
-	          "#c80000" : 'red #c80000',
-	          "#ff9321" : 'orange #ff9321',
-	          "#5b0089" : 'purple #5b0089',
-	          "#ff00ff" : 'pink #ff00ff',
-	          "#0d9000" : 'green #0d9000',
-	          "#8bff00" : 'lime #8bff00',
-	          "#ffcd00" : 'gold #ffcd00',
-	          "#fff827" : 'yellow #fff827',
-	          "#543a27" : 'no dye',
+color_dict = {"#0500ab" : 'dark_blue',
+	          "#2bc5ff" : 'sky_blue',
+	          "#c80000" : 'red',
+	          "#ff9321" : 'orange',
+	          "#5b0089" : 'purple',
+	          "#ff00ff" : 'pink',
+	          "#0d9000" : 'green',
+	          "#8bff00" : 'lime',
+	          "#ffcd00" : 'gold',
+	          "#fff827" : 'yellow',
+	          "#543a27" : 'no_dye',
 	          "#ffffff" : 'custom'}
 
 price_dict = {

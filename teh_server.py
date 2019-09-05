@@ -10,12 +10,6 @@ from waitress import serve
 ENT_server = flask.Flask(__name__)
 ENT_server.config['SECRET_KEY'] = 'i%fee1@h0m3n0w&uR2blAmE'
 
-@ENT_server.route('/give.status')
-def give_status():
-	session_id = session.get('id', None)
-	notif = sql_read("SELECT notification FROM cart WHERE s_id=?", session_id)[0]
-	if not notif: return "", 404
-	return build_response(notif, 'js')
 
 @ENT_server.route('/')
 def home_redirect():
@@ -32,13 +26,18 @@ def lets_go(shipping):
 		if mod:
 			mod = flask.Markup.unescape(mod)
 			mod = flask.json.loads(mod)
+			for char in range(len(mod["comments"])):
+				if mod["comments"][char] == " ":
+					mod["comments"] = mod["comments"][:char] + "_" + mod["comments"][char+1:]
+					print(mod["comments"])
+			mod["colors_string"] = ""
 			for i in range(len(mod["colors"])):
-				mod["colors"][i] = color_dict[mod["colors"][i]]
-			ship_these.update({str(num):mod["size"] + "||" + mod["material"] + "||" + mod["style"] + "||" + mod["colors"] + "||" + mod["comments"]})
+				mod["colors_string"] += ("" if i == 0 else "|") + color_dict[mod["colors"][i]]
+			ship_these.update({str(num):mod["size"] + "||" + mod["material"] + "||" + mod["style"] + "||" + mod["colors_string"] + "||" + mod["comments"]})
 			prices.update({str(num) : mod["price"]})
 	print(ship_these, len(ship_these))
+	sql_write("UPDATE cart SET item_1=NULL, item_2=NULL, item_3=NULL, item_4=NULL WHERE s_id=?", session_id)
 	template = flask.render_template('modal.html', num_of_items=len(ship_these), item=ship_these, price=prices, shipping=("48.00" if shipping=="fast" else "18.00"))
-	print(template)
 	return build_response(template,"js")
 
 @ENT_server.route('/<path:html>.html')
