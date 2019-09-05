@@ -1,12 +1,10 @@
 import flask
-from ENT_sql import init_cart, init_paid, sql_write, sql_read
-from ENT_assets import build_response, html_dict, user_gen, column_dict, price_dict, transact_gen, send_message
+from ENT_sql import init_cart, sql_write, sql_read
+from ENT_assets import build_response, html_dict, user_gen, column_dict, price_dict, color_dict, transact_gen, send_message
 from flask import session, request, jsonify
 from flask.json import loads, tojson_filter
-from time import time, sleep
+from time import time
 from waitress import serve
-from werkzeug.datastructures import ImmutableMultiDict
-import requests
 
 
 ENT_server = flask.Flask(__name__)
@@ -23,121 +21,6 @@ def give_status():
 def home_redirect():
 	return flask.redirect('/Products/products.html')
 
-@ENT_server.route('/ipn/',methods=['POST', 'GET'])
-def ipn():
-	send_message("ipn notification", "ipn notification started")
-	try:
-		arg = ''
-		request.parameter_storage_class = ImmutableMultiDict
-		values = request.form
-		for x, y in values.iteritems():
-			arg += "&{x}={y}".format(x=x,y=y)
-		validate_url = 'https://ipnpb.sandbox.paypal.com/cgi-bin/websc?cmd=_notify-validate{arg}'.format(arg=arg)
-		r = requests.get(validate_url)
-		if r.text == 'VERIFIED':
-			try:
-				payer_email = request.form.get('payer_email')
-				unix = int(time())
-				payment_date = request.form.get('payment_date')
-				first_name = request.form.get('last_name')
-				last_name = request.form.get('last_name')
-				street_address = request.form.get('address_street')
-				city = request.form.get('address_city')
-				state = request.form.get('address_state')
-				zip_code = request.form.get('address_zip')
-				country = request.form.get('address_country')
-				item_1 = loads(request.form.get('item_name_1'))
-				amount_1 =  float(request.form.get('amount_1'))
-				item_2 =  loads(request.form.get('item_name_2'))
-				amount_2 = float(request.form.get('amount_2'))
-				item_3 = loads(request.form.get('item_name_3'))
-				amount_3 = float(request.form.get('amount_3'))
-				item_4 = loads(request.form.get('item_name_4'))
-				amount_4 = float(request.form.get('amount_4'))
-				item_5 = loads(request.form.get('item_name_4'))
-				amount_5 = float(request.form.get('amount_4'))
-				payment_gross = float(request.form.get('payment_gross'))
-				payment_fee = float(request.form.get('payment_fee'))
-				payment_net = payment_gross - payment_fee
-				payment_status = request.form.get('payment_status')
-				user_id = int(request.form.get('os0'))
-				ipn_items = [item_1, item_2, item_3, item_4, item_5]
-				true_prices = {}
-				ipn_amounts = [amount_1, amount_2, amount_3, amount_4, amount_5]
-				item_num = 0
-				no_shipping = False
-				bad_shipping = False
-				shipping = None
-				for item in ipn_items:
-					item_num += 1
-					if item == "shipping":
-						shipping = (item_1 if item_num==1 else item_2 if item_num==2 else item_3 if item_num==3 else item_4 if item_num==4 else item_5)
-						if shipping not in (18, 48): bad_shipping = True
-					elif item_num == 4 and shipping is None:
-						no_shipping = True
-						shipping = 0
-				if not no_shipping:
-					if item_num == 5:
-						del ipn_items[4]
-						del item_5
-					elif item_num == 4:
-						del ipn_items[3]
-						item_4 = ""
-					elif item_num == 3:
-						del ipn_items[2]
-						item_3 = ""
-					elif item_num == 2:
-						del ipn_items[1]
-						item_2 = ""
-					elif item_num == 1:
-						del ipn_items[0]
-						item_1 = ""
-				counter = 0
-				for mod in ipn_items:
-					if mod:
-						counter += 1
-						true_price = price_dict.get(mod.get('size', '') + mod.get('material', '') + mod.get('style', ''),0)
-						true_prices.update({f"item_{counter}":true_price})
-				true_gross = sum(true_prices)
-				disparity = payment_gross - shipping - true_gross
-				user_ip = sql_read("""SELECT ip FROM cart WHERE s_id=?""", user_id)[0]
-				sql_write(
-					"""INSERT into paid (t_id, s_id, f_name, l_name, email, item_1, item_2, item_3, item_4, shipping, gross,
-					   fee, net, status, address, city, state, zip_code, country, ip, order_date, order_time)
-					   VALUES(:t_id, :s_id, :f_name, :l_name, :email, :item_1, :item_2, :item_3, :item_4, :shipping, :gross, :fee, :net,
-					   :status, :address, :city, :state, :zip_code, :country, :ip, :order_date, :order_time)""",
-					   {"t_id": next(transact_gen), "s_id": user_id, "f_name":first_name, "l_name":last_name,
-					    "email": payer_email, "item_1":item_1, "item_2":item_2, "item_3":item_3, "item_4":item_4,
-					    "gross": payment_gross, "fee":payment_fee, "net":payment_net, "status":payment_status,
-					    "address":street_address, "city":city, "state":state, "zip_code":zip_code, "country":country,
-					    "ip":user_ip, "order_date":payment_date, "order_time":unix, "shipping":shipping}
-				)
-				sql_write(
-					"UPDATE cart SET notification='?' WHERE s_id='?'",
-					    f"{item_1}={true_prices.get('item_1')}; you paid:{ipn_amounts[0]}\n{item_2}={true_prices.get('item_2')}; you paid:{ipn_amounts[1]}, \
-					    \n{item_3}={true_prices.get('item_3')}; you paid:{ipn_amounts[2]}\n{item_4}={true_prices.get('item_4')}; you paid:{ipn_amounts[3]}  \
-					    \nshipping={(shipping if not no_shipping else 'you paid no shipping')}; your shipping amount is {('valid' if not bad_shipping else 'invalid')} (18.00 and 48.00 are the only valid amounts) \
-					    your order is {('valid' if not disparity else 'invalid')}; {('' if not disparity else f'disparity between your payment and the expected total is {disparity}')} \
-					    {('' if not disparity else 'you paid too much' if disparity > 0 else 'you paid too little')}",
-					    user_id
-				)
-			except Exception as e:
-				pass
-			# 	with open('/tmp/ipnout.txt', 'a') as f:
-			# 		data = 'ERROR WITH IPN DATA\n' + str(values) + '\n'
-			# 		f.write(data)
-			#
-			#
-			# with open('/tmp/ipnout.txt', 'a') as f:
-			# 	data = 'SUCCESS\n' + str(values) + '\n'
-			# 	f.write(data)
-			
-			send_message("ipn notification", str(values))
-	
-	except Exception as e:
-		pass
-
-
 @ENT_server.route('/<path:shipping>.lets_go')
 def lets_go(shipping):
 	session_id = session.get('id', None)
@@ -149,7 +32,9 @@ def lets_go(shipping):
 		if mod:
 			mod = flask.Markup.unescape(mod)
 			mod = flask.json.loads(mod)
-			ship_these.update({str(num):mod["size"] + "||" + mod["material"] + "||" + mod["style"]})
+			for i in range(len(mod["colors"])):
+				mod["colors"][i] = color_dict[mod["colors"][i]]
+			ship_these.update({str(num):mod["size"] + "||" + mod["material"] + "||" + mod["style"] + "||" + mod["colors"] + "||" + mod["comments"]})
 			prices.update({str(num) : mod["price"]})
 	print(ship_these, len(ship_these))
 	template = flask.render_template('modal.html', num_of_items=len(ship_these), item=ship_these, price=prices, shipping=("48.00" if shipping=="fast" else "18.00"))
@@ -264,11 +149,6 @@ def handle_mod(mod):
 
 try:
 	init_cart()
-except:
-	pass
-
-try:
-	init_paid()
 except:
 	pass
 

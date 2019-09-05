@@ -8,12 +8,23 @@ html_dict = {'About/about': "about", 'Products/products': "products",
              'Hybrid/hybrid': "hybrid", 'Zjelezyaka/zjel': "zjel",
              'V_3/V_3': "V_3", 'V_25/V_25': "V_25", 'order_status/order_status':"order_status"}
 
-column_dict = {
-	"1": "UPDATE cart SET item_1=? WHERE s_id=?",
-	"2": "UPDATE cart SET item_2=? WHERE s_id=?",
-	"3": "UPDATE cart SET item_3=? WHERE s_id=?",
-	"4": "UPDATE cart SET item_4=? WHERE s_id=?",
-}
+column_dict = {"1": "UPDATE cart SET item_1=? WHERE s_id=?",
+	           "2": "UPDATE cart SET item_2=? WHERE s_id=?",
+	           "3": "UPDATE cart SET item_3=? WHERE s_id=?",
+	           "4": "UPDATE cart SET item_4=? WHERE s_id=?"}
+
+color_dict = {"#0500ab" : 'dark blue #0500ab',
+	          "#2bc5ff" : 'sky blue #2bc5ff',
+	          "#c80000" : 'red #c80000',
+	          "#ff9321" : 'orange #ff9321',
+	          "#5b0089" : 'purple #5b0089',
+	          "#ff00ff" : 'pink #ff00ff',
+	          "#0d9000" : 'green #0d9000',
+	          "#8bff00" : 'lime #8bff00',
+	          "#ffcd00" : 'gold #ffcd00',
+	          "#fff827" : 'yellow #fff827',
+	          "#543a27" : 'no dye',
+	          "#ffffff" : 'custom'}
 
 price_dict = {
 	"21700mapleV_25" : 250, "21700mapleV_3" : 270,	"21700ashV_25" : 300, "21700ashV_3" : 320,
