@@ -87,10 +87,10 @@ $('.thumb').on('mouseover click', function () {
     $main_img.attr('src', `../Images/main_prev/V_25_${this.id}.jpg`);
     $main_img.css('visibility', 'visible')
 });
-$('td').on('mouseover', function () {
+$('td').on((is_mobile) ? null : 'mouseover', function () {
     $(this).css('text-shadow', '0px 4px 10px #FFE878')
 });
-$('td').on('mouseout', function () {
+$('td').on((is_mobile) ? null : 'mouseout', function () {
     $(this).css('text-shadow', '')
 });
 $('.click_add').on('click', function() {

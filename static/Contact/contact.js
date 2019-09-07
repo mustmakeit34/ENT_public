@@ -114,7 +114,7 @@ function evaluate_cart(){
         $cart_img.css('cursor', 'pointer');
         animate_cart = true;
         allow_buy = true;
-        animate_teh_cart()
+        animate_teh_cart();
         $('#shipping').css('visibility', 'visible')
     }else{
         $cart_img.css('cursor', 'default');

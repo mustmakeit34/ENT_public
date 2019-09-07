@@ -74,10 +74,10 @@ $('.thumb').on('mouseover click', function () {
     $main_img = $('#main_prev');
     $main_img.attr('src', `../Images/main_prev/hybrid_${this.id}.jpg`)
 });
-$('td').on('mouseover', function () {
+$('td').on((is_mobile) ? null : 'mouseover', function () {
     $(this).css('text-shadow', '0px 4px 10px #FFE878')
 });
-$('td').on('mouseout', function () {
+$('td').on((is_mobile) ? null : 'mouseout', function () {
     $(this).css('text-shadow', '')
 });
 $('#comments').on('click', function(e) {
