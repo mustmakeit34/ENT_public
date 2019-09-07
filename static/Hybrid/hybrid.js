@@ -30,7 +30,7 @@ if (is_mobile){
     $whole.css('transform', 'unset');
     $whole.css('left', 'unset');
     $whole.css('width', '950px');
-    $whole.css('height', '1079px');
+    $whole.css('height', '1300px');
     $whole.css('overflow', 'hidden');
     $('#watermark').css('left', '-76px');
 }
