@@ -29,12 +29,11 @@ color_dict = {
 var is_mobile = jQuery.browser.mobile;
 if (is_mobile){
     var $whole = $('#whole_thing');
-    $whole.css('transform', 'unset');
-    $whole.css('left', 'unset');
+    var $water = $('#watermark');
+    $whole.css('height', '1079px');
     $whole.css('width', '950px');
-    $whole.css('height', '1300px');
-    $whole.css('overflow', 'hidden');
-    $('#watermark').css('left', '-76px');
+    $water.css('left', '50%');
+    $water.css('transform', 'translate(-50%)');
 }
 
 var $shipping = $('#shipping');

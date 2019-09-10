@@ -9,12 +9,11 @@ allow_buy = false;
 var is_mobile = jQuery.browser.mobile;
 if (is_mobile){
     var $whole = $('#whole_thing');
-    $whole.css('transform', 'unset');
-    $whole.css('left', 'unset');
+    var $water = $('#watermark');
     $whole.css('height', '1079px');
     $whole.css('width', '950px');
-    $whole.css('overflow', 'hidden');
-    $('#watermark').css('left', '-76px');
+    $water.css('left', '50%');
+    $water.css('transform', 'translate(-50%)');
 }
 maple_descript = "Maple is the classic stabilized standard, for stab-wood mods. Swirling beautiful vibrance.";
 ash_descript = "Black Ash is a more rare material in the industry. Its dark and sinister weave, \
