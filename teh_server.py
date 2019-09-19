@@ -1,6 +1,6 @@
 import flask
 from ENT_sql import init_cart, sql_write, sql_read
-from ENT_assets import build_response, html_dict, user_gen, column_dict, price_dict, color_dict, transact_gen, send_message
+from ENT_assets import build_response, html_dict, user_gen, column_dict, price_dict, color_dict
 from flask import session, request, jsonify
 from flask.json import loads, tojson_filter
 from time import time

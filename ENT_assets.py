@@ -6,7 +6,8 @@ html_dict = {'About/about': "about", 'Products/products': "products",
              'Gallery/gallery': "gallery", 'Contact/contact': "contact",
              'Maple/maple': "maple", 'Ash/ash': "ash",
              'Hybrid/hybrid': "hybrid", 'Zjelezyaka/zjel': "zjel",
-             'V_3/V_3': "V_3", 'V_25/V_25': "V_25", 'order_status/order_status':"order_status"}
+             'V_3/V_3': "V_3", 'V_25/V_25': "V_25",
+             'Mobile/mobile' : "mobile", 'Mobile/bootstrap.min.css' : "bootstrap.min.css"}
 
 column_dict = {"1": "UPDATE cart SET item_1=? WHERE s_id=?",
 	           "2": "UPDATE cart SET item_2=? WHERE s_id=?",

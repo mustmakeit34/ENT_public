@@ -26,22 +26,20 @@ color_dict = {
 
 var is_mobile = jQuery.browser.mobile;
 if (is_mobile){
-    var $whole = $('#whole_thing');
-    var $water = $('#watermark');
-    $whole.css('height', '1079px');
-    $whole.css('width', '950px');
-    $water.css('left', '50%');
-    $water.css('transform', 'translate(-50%)');
+    window.location = "../Mobile/mobile.html"
+    // var $whole = $('#whole_thing');
+    // var $water = $('#watermark');
+    // $whole.css('height', '1079px');
+    // $whole.css('width', '950px');
+    // $water.css('left', '50%');
+    // $water.css('transform', 'translate(-50%)');
 }
 
 var teh_cart = document.getElementById("cart_items");
 var $cart_img = $('#cart_img');
 $cart_img.on('click', function(){
-    console.log("working");
     if ($('#cart_items :first-child').data('mod_object')){
-        console.log("this too");
         var shipping_type = $('#shipping').serializeArray()[0]["value"];
-        console.log(shipping_type);
         $.ajax({type: "GET",
             url: (shipping_type=="dhl") ? '../fast.lets_go':'../normal.lets_go',
             success: function(data){
@@ -52,7 +50,6 @@ $cart_img.on('click', function(){
         }})
 }});
 function evaluate_cart(){
-      console.log($('#cart_items :first-child').data('mod_object'));
     if ($('#cart_items :first-child').data('mod_object')){
         $cart_img.css('cursor', 'pointer');
         animate_cart = true;
