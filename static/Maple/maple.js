@@ -26,13 +26,7 @@ color_dict = {
 
 var is_mobile = jQuery.browser.mobile;
 if (is_mobile){window.location = "http://www.entmods.com/Mobile/mobile.html"}
-    // var $whole = $('#whole_thing');
-    // var $water = $('#watermark');
-    // $whole.css('height', '1079px');
-    // $whole.css('width', '950px');
-    // $water.css('left', '50%');
-    // $water.css('transform', 'translate(-50%)');
-}
+
 
 var teh_cart = document.getElementById("cart_items");
 var $cart_img = $('#cart_img');
