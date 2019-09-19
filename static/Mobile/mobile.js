@@ -123,124 +123,198 @@ $('#show_V25').on('click', function(){
 });
 
 $('#maple_18650_V_25').on('click', function(){
+    if (!flag==this){clear_dots()}
     add_maple_18650_V25();
     show_maple_color_comm();
+    handle_add(this);
 });
 $('#maple_21700_V_25').on('click', function(){
+    if (!flag==this){clear_dots()}
     add_maple_21700_V25();
     show_maple_color_comm();
+    handle_add(this);
 });
 $('#maple_18650_V_3').on('click', function(){
+    if (!flag==this){clear_dots()}
     add_maple_18650_V3();
     show_maple_color_comm();
+    handle_add(this);
 });
 $('#maple_21700_V_3').on('click', function(){
+    if (!flag==this){clear_dots()}
     add_maple_21700_V3();
     show_maple_color_comm();
+    handle_add(this);
 });
 $('#ash_18650_V_25').on('click', function(){
+    if (!flag==this){clear_dots()}
     add_ash_18650_V25();
     show_ash_color_comm();
+    handle_add(this);
 });
 $('#ash_21700_V_25').on('click', function(){
+    if (!flag==this){clear_dots()}
     add_ash_21700_V25();
     show_ash_color_comm();
+    handle_add(this);
 });
 $('#ash_18650_V_3').on('click', function(){
+    if (!flag==this){clear_dots()}
     add_ash_18650_V3();
     show_ash_color_comm();
+    handle_add(this);
 });
 $('#ash_21700_V_3').on('click', function(){
+    if (!flag==this){clear_dots()}
     add_ash_21700_V3();
     show_ash_color_comm();
+    handle_add(this);
 });
 $('#hybrid_18650_V_25').on('click', function(){
+    if (!flag==this){clear_dots()}
     add_hybrid_18650_V25();
     show_hybrid_comm();
+    colors = [];
+    handle_add(this);
 });
 $('#hybrid_21700_V_25').on('click', function(){
+    if (!flag==this){clear_dots()}
     add_hybrid_21700_V25();
     show_hybrid_comm();
+    colors = [];
+    handle_add(this);
 });
 $('#hybrid_18650_V_3').on('click', function(){
+    if (!flag==this){clear_dots()}
     add_hybrid_18650_V3();
     show_hybrid_comm();
+    colors = [];
+    handle_add(this);
 });
 $('#hybrid_21700_V_3').on('click', function(){
+    if (!flag==this){clear_dots()}
     add_hybrid_21700_V3();
     show_hybrid_comm();
+    colors = [];
+    handle_add(this);
 });
 $('#zjel_18650_V_25').on('click', function(){
+    if (!flag==this){clear_dots()}
     add_zjel_18650_V25();
     show_zjel_comm();
+    colors = [];
+    handle_add(this);
 });
 $('#zjel_21700_V_25').on('click', function(){
+    if (!flag==this){clear_dots()}
     add_zjel_21700_V25();
     show_zjel_comm();
+    colors = [];
+    handle_add(this);
 });
 $('#V3_18650_maple').on('click', function(){
+    if (!flag==this){clear_dots()}
     add_maple_18650_V3();
     show_V3_color();
     show_V3_comm();
+    handle_add(this);
 });
 $('#V3_21700_maple').on('click', function(){
+    if (!flag==this){clear_dots()}
     add_maple_21700_V3();
     show_V3_color();
     show_V3_comm();
+    handle_add(this);
 });
 $('#V3_18650_ash').on('click', function(){
+    if (!flag==this){clear_dots()}
     add_ash_18650_V3();
     show_V3_color();
     show_V3_comm();
+    handle_add(this);
 });
 $('#V3_21700_ash').on('click', function(){
+    if (!flag==this){clear_dots()}
     add_ash_21700_V3();
     show_V3_color();
     show_V3_comm();
+    handle_add(this);
 });
 $('#V3_18650_hybrid').on('click', function(){
+    if (!flag==this){clear_dots()}
     add_hybrid_18650_V3();
     show_V3_comm();
+    handle_add(this);
+    colors = [];
+    hide_V3_color();
 });
 $('#V3_21700_hybrid').on('click', function(){
+    if (!flag==this){clear_dots()}
     add_hybrid_21700_V3();
     show_V3_comm();
+    handle_add(this);
+    colors = [];
+    hide_V3_color();
 });
 $('#V25_18650_maple').on('click', function(){
+    if (!flag==this){clear_dots()}
     add_maple_18650_V25();
     show_V25_color();
     show_V25_comm();
+    handle_add(this);
 });
 $('#V25_21700_maple').on('click', function(){
-    add_maple_18650_V25();
+    if (!flag==this){clear_dots()}
+    add_maple_21700_V25();
     show_V25_color();
     show_V25_comm();
+    handle_add(this);
 });
 $('#V25_18650_ash').on('click', function(){
+    if (!flag==this){clear_dots()}
     add_ash_18650_V25();
     show_V25_color();
     show_V25_comm();
+    handle_add(this);
 });
 $('#V25_21700_ash').on('click', function(){
+    if (!flag==this){clear_dots()}
     add_ash_21700_V25();
     show_V25_color();
     show_V25_comm();
+    handle_add(this);
 });
 $('#V25_18650_hybrid').on('click', function(){
+    if (!flag==this){clear_dots()}
     add_hybrid_18650_V25();
     show_V25_comm();
+    handle_add(this);
+    colors = [];
+    hide_V25_color();
 });
 $('#V25_21700_hybrid').on('click', function(){
+    if (!flag==this){clear_dots()}
     add_hybrid_21700_V25();
     show_V25_comm();
+    handle_add(this);
+    colors = [];
+    hide_V25_color();
 });
 $('#V25_18650_zjel').on('click', function(){
+    if (!flag==this){clear_dots()}
     add_zjel_18650_V25();
     show_V25_comm();
+    handle_add(this);
+    colors = [];
+    hide_V25_color();
 });
 $('#V25_21700_zjel').on('click', function(){
+    if (!flag==this){clear_dots()}
     add_zjel_21700_V25();
     show_V25_comm();
+    handle_add(this);
+    colors = [];
+    hide_V25_color();
 });
 
 function show_maple_color_comm(){
@@ -268,6 +342,12 @@ function show_V25_color(){
 }
 function show_V25_comm(){
     $V25_comments.css('visibility', 'visible');
+}
+function hide_V3_color(){
+    $V3_colors.css('visibility', 'hidden')
+}
+function hide_V25_color(){
+    $V25_colors.css('visibility', 'hidden')
 }
 function add_maple_18650_V25(){
     price = 230;
@@ -461,8 +541,8 @@ function which_comments(){
     }else{comments = ""}
 }
 
-$('.add').on('click', function() {
-    if (flag == this && $('#cart_items').children().length < 4 && colors.length > 0){
+function handle_add(adding){
+    if (flag == adding && $('#cart_items').children().length < 4 && (colors.length > 0 || adding.className == "add no_color")){
         animate_add_1 = false;
         animate_add_2 = false;
         which_comments();
@@ -477,18 +557,18 @@ $('.add').on('click', function() {
         document.getElementsByTagName('form')[6].reset();
         clear_all()
     }else if (animate_add_1){
-        flag = this;
+        flag = adding;
         animate_add_1 = false;
         animate_add_2 = true;
-        animate_cart_2($(this));
+        animate_cart_2($(adding));
     }else if (animate_add_2 || !(animate_add_1 || animate_add_2)){
-        flag = this;
+        flag = adding;
         animate_add_1 = true;
         animate_add_2 = false;
-        animate_cart_1($(this));
+        animate_cart_1($(adding));
     }
     if ($('#cart_items').children().length === 4){$('#full').css('visibility','visible')}
-});
+}
 
 function ENT_Mod(){
     this.size = size;

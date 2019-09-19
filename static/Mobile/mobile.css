@@ -1,3 +1,10 @@
+#cart_headline{
+  display:inline;
+}
+#ent_headline{
+  color:white;
+  float:right;
+}
 td{
   text-align: right !important;
 }
