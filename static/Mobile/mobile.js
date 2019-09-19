@@ -358,61 +358,70 @@ $('.color_1').on('click', function() {
     if (colors.includes("#543a27")){clear_dots()}
     if (!colors.includes("#0500ab") && colors.length < 3){colors.push("#0500ab")
     }else if (colors.includes("#0500ab")){colors.splice(colors.indexOf("#0500ab"),1)}
-    apply_dots(`${material}_${style}_${size}`);
+    (this.className=="color_1 V3_color" || this.className=="color_1 V25_color") ? apply_dots(`${style}_${material}_${size}`): apply_dots(`${material}_${style}_${size}`);
 });
 $('.color_2').on('click', function() {
     if (colors.includes("#543a27")){clear_dots()}
     if (!colors.includes("#2bc5ff") && colors.length < 3){colors.push("#2bc5ff")
     }else if (colors.includes("#2bc5ff")){colors.splice(colors.indexOf("#2bc5ff"),1)}
     apply_dots(`${material}_${style}_${size}`);
+    (this.className=="color_2 V3_color" || this.className=="color_2 V25_color") ? apply_dots(`${style}_${material}_${size}`): apply_dots(`${material}_${style}_${size}`);
 });
 $('.color_3').on('click', function() {
     if (colors.includes("#543a27")){clear_dots()}
     if (!colors.includes("#c80000") && colors.length < 3){colors.push("#c80000")
     }else if (colors.includes("#c80000")){colors.splice(colors.indexOf("#c80000"),1)}
     apply_dots(`${material}_${style}_${size}`);
+    (this.className=="color_3 V3_color" || this.className=="color_3 V25_color") ? apply_dots(`${style}_${material}_${size}`): apply_dots(`${material}_${style}_${size}`);
 });
 $('.color_4').on('click', function() {
     if (colors.includes("#543a27")){clear_dots()}
     if (!colors.includes("#ff9321") && colors.length < 3){colors.push("#ff9321")
     }else if (colors.includes("#ff9321")){colors.splice(colors.indexOf("#ff9321"),1)}
     apply_dots(`${material}_${style}_${size}`);
+    (this.className=="color_4 V3_color" || this.className=="color_4 V25_color") ? apply_dots(`${style}_${material}_${size}`): apply_dots(`${material}_${style}_${size}`);
 });
 $('.color_5').on('click', function() {
     if (colors.includes("#543a27")){clear_dots()}
     if (!colors.includes("#5b0089") && colors.length < 3){colors.push("#5b0089")
     }else if (colors.includes("#5b0089")){colors.splice(colors.indexOf("#5b0089"),1)}
     apply_dots(`${material}_${style}_${size}`);
+    (this.className=="color_5 V3_color" || this.className=="color_5 V25_color") ? apply_dots(`${style}_${material}_${size}`): apply_dots(`${material}_${style}_${size}`);
 });
 $('.color_6').on('click', function() {
     if (colors.includes("#543a27")){clear_dots()}
     if (!colors.includes("#ff00ff") && colors.length < 3){colors.push("#ff00ff")
     }else if (colors.includes("#ff00ff")){colors.splice(colors.indexOf("#ff00ff"),1)}
     apply_dots(`${material}_${style}_${size}`);
+    (this.className=="color_6 V3_color" || this.className=="color_6 V25_color") ? apply_dots(`${style}_${material}_${size}`): apply_dots(`${material}_${style}_${size}`);
 });
 $('.color_7').on('click', function() {
     if (colors.includes("#543a27")){clear_dots()}
     if (!colors.includes("#0d9000") && colors.length < 3){colors.push("#0d9000")
     }else if (colors.includes("#0d9000")){colors.splice(colors.indexOf("#0d9000"),1)}
     apply_dots(`${material}_${style}_${size}`);
+    (this.className=="color_7 V3_color" || this.className=="color_7 V25_color") ? apply_dots(`${style}_${material}_${size}`): apply_dots(`${material}_${style}_${size}`);
 });
 $('.color_8').on('click', function() {
     if (colors.includes("#543a27")){clear_dots()}
     if (!colors.includes("#8bff00") && colors.length < 3){colors.push("#8bff00")
     }else if (colors.includes("#8bff00")){colors.splice(colors.indexOf("#8bff00"),1)}
     apply_dots(`${material}_${style}_${size}`);
+    (this.className=="color_8 V3_color" || this.className=="color_8 V25_color") ? apply_dots(`${style}_${material}_${size}`): apply_dots(`${material}_${style}_${size}`);
 });
 $('.color_9').on('click', function() {
     if (colors.includes("#543a27")){clear_dots()}
     if (!colors.includes("#ffcd00") && colors.length < 3){colors.push("#ffcd00")
     }else if (colors.includes("#ffcd00")){colors.splice(colors.indexOf("#ffcd00"),1)}
     apply_dots(`${material}_${style}_${size}`);
+    (this.className=="color_9 V3_color" || this.className=="color_9 V25_color") ? apply_dots(`${style}_${material}_${size}`): apply_dots(`${material}_${style}_${size}`);
 });
 $('.color_10').on('click', function() {
     if (colors.includes("#543a27")){clear_dots()}
     if (!colors.includes("#fff827") && colors.length < 3){colors.push("#fff827")
     }else if (colors.includes("#fff827")){colors.splice(colors.indexOf("#fff827"),1)}
     apply_dots(`${material}_${style}_${size}`);
+    (this.className=="color_10 V3_color" || this.className=="color_10 V25_color") ? apply_dots(`${style}_${material}_${size}`): apply_dots(`${material}_${style}_${size}`);
 });
 $('.color_11').on('click', function() {
     if (!colors.includes("#543a27")){
@@ -420,12 +429,14 @@ $('.color_11').on('click', function() {
         colors.push("#543a27")
     }else if (colors.includes("#543a27")){colors.splice(colors.indexOf("#543a27"),1)}
     apply_dots(`${material}_${style}_${size}`);
+    (this.className=="color_11 V3_color" || this.className=="color_11 V25_color") ? apply_dots(`${style}_${material}_${size}`): apply_dots(`${material}_${style}_${size}`);
 });
 $('.color_12').on('click', function() {
     if (colors.includes("#543a27")){clear_dots()}
     if (!colors.includes("#ffffff") && colors.length < 3){colors.push("#ffffff")
     }else if (colors.includes("#ffffff")){colors.splice(colors.indexOf("#ffffff"),1)}
     apply_dots(`${material}_${style}_${size}`);
+    (this.className=="color_12 V3_color" || this.className=="color_12 V25_color") ? apply_dots(`${style}_${material}_${size}`): apply_dots(`${material}_${style}_${size}`);
 });
 function apply_dots(dot_id){
     $('.dot').css('background-color', '');
@@ -456,7 +467,6 @@ $('.add').on('click', function() {
         animate_add_2 = false;
         which_comments();
         let new_mod = new ENT_Mod();
-        console.log(new_mod);
         flag = null;
         ship_it(new_mod);
         document.getElementsByTagName('form')[1].reset();
@@ -504,7 +514,6 @@ function create_cart_el(json_data){
     if (! mod){
         $('#cart_items').empty()
     }else{
-        console.log(mod);
         let cart_item = document.createElement('div');
         $(cart_item).data('mod_object', mod);
         let color_grouping = document.createElement('div');
@@ -602,7 +611,6 @@ $top_cart.on('click', function(){
         $.ajax({type: "GET",
             url: (shipping_type=="dhl") ? '../fast.lets_go':'../normal.lets_go',
             success: function(data){
-                console.log(data);
                 $('#modal').append(data);
                 $('#paypal_form').submit()
 

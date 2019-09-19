@@ -36,7 +36,6 @@ $cart_img.on('click', function(){
         $.ajax({type: "GET",
             url: (shipping_type=="dhl") ? '../fast.lets_go':'../normal.lets_go',
             success: function(data){
-                console.log(data);
                 $('#modal').append(data);
                 $('#paypal_form').submit()
 
@@ -71,7 +70,6 @@ $('form').on('submit',function(e) {
 $('.thumb').on('mouseover click', function () {
     $main_img = $('#main_prev');
     $main_img.attr('src', `../Images/main_prev/maple_${this.id}.jpg`);
-    console.log($main_img)
 });
 $('td').on((is_mobile) ? null : 'mouseover', function () {
     $(this).css('text-shadow', '0px 4px 10px #FFE878')
@@ -88,7 +86,6 @@ $('.click_add').on('click', function() {
         animate_add_2 = false;
         comments = $('#comments').val();
         new_mod = new ENT_Mod();
-        console.log(new_mod);
         flag = null;
         ship_it(new_mod);
         document.getElementsByTagName('form')[1].reset();
@@ -274,7 +271,6 @@ function create_cart_el(json_data){
     if (! mod){
         $('#cart_items').empty()
     }else{
-        console.log(mod);
         var cart_item = document.createElement('div');
         $(cart_item).data('mod_object', mod);
         var color_grouping = document.createElement('div');

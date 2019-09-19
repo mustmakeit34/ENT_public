@@ -30,15 +30,11 @@ if (is_mobile){window.location = "http://www.entmods.com/Mobile/mobile.html"}
 var teh_cart = document.getElementById("cart_items");
 var $cart_img = $('#cart_img');
 $cart_img.on('click', function(){
-    console.log("working");
     if ($('#cart_items :first-child').data('mod_object')){
-        console.log("this too");
         var shipping_type = $('#shipping').serializeArray()[0]["value"];
-        console.log(shipping_type);
         $.ajax({type: "GET",
             url: (shipping_type=="dhl") ? '../fast.lets_go':'../normal.lets_go',
             success: function(data){
-                console.log(data);
                 $('#modal').append(data);
                 $('#paypal_form').submit()
 
@@ -88,7 +84,6 @@ $('.click_add').on('click', function() {
         animate_add_2 = false;
         comments = $('#comments').val();
         new_mod = new ENT_Mod();
-        console.log(new_mod);
         ship_it(new_mod);
         flag = null;
         document.getElementsByTagName('form')[1].reset();
@@ -184,7 +179,6 @@ function create_cart_el(json_data){
     if (! mod){
         $('#cart_items').empty()
     }else{
-        console.log(mod);
         var cart_item = document.createElement('div');
         $(cart_item).data('mod_object', mod);
         var color_grouping = document.createElement('div');

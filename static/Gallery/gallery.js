@@ -28,15 +28,11 @@ $('.thumb').on('mouseover click', function () {
     $main_img.attr('src', `../Images/gallery/gallery_${this.id}.jpg`)
 });
 $cart_img.on('click', function(ev){
-    console.log("working");
     if ($('#cart_items :first-child').data('mod_object')){
-        console.log("this too");
         var shipping_type = $('#shipping').serializeArray()[0]["value"];
-        console.log(shipping_type);
         $.ajax({type: "GET",
             url: (shipping_type=="dhl") ? '../fast.lets_go':'../normal.lets_go',
             success: function(data){
-                console.log(data);
                 $('#modal').append(data);
                 $('#paypal_form').submit()
 
@@ -47,7 +43,6 @@ function create_cart_el(json_data){
     if (! mod){
         $('#cart_items').empty()
     }else{
-        console.log(mod);
         var cart_item = document.createElement('div');
         $(cart_item).data('mod_object', mod);
         var color_grouping = document.createElement('div');

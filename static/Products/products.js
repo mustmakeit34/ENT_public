@@ -123,7 +123,6 @@ function create_cart_el(json_data){
     if (! mod){
         $('#cart_items').empty()
     }else{
-        console.log(mod);
         var cart_item = document.createElement('div');
         $(cart_item).data('mod_object', mod);
         var color_grouping = document.createElement('div');
@@ -193,13 +192,10 @@ var teh_cart = document.getElementById("cart_items");
 var $cart_img = $('#cart_img');
 $cart_img.on('click', function(ev){
     if ($('#cart_items :first-child').data('mod_object')){
-        console.log("this too");
         var shipping_type = $('#shipping').serializeArray()[0]["value"];
-        console.log(shipping_type);
         $.ajax({type: "GET",
             url: (shipping_type=="dhl") ? '../fast.lets_go':'../normal.lets_go',
             success: function(data){
-                console.log(data);
                 $('#modal').append(data);
                 $('#paypal_form').submit()
 
@@ -207,14 +203,12 @@ $cart_img.on('click', function(ev){
 }});
 function evaluate_cart(){
     if ($('#cart_items :first-child').data('mod_object')){
-        console.log('true');
         $cart_img.css('cursor', 'pointer');
         animate_cart = true;
         allow_buy = true;
         animate_teh_cart();
         $('#shipping').css('visibility', 'visible')
     }else{
-        console.log("false");
         $cart_img.css('cursor', 'default');
         animate_cart = false;
         allow_buy = false;
