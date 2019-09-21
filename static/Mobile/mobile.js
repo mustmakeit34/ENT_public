@@ -123,125 +123,125 @@ $('#show_V25').on('click', function(){
 });
 
 $('#maple_18650_V_25').on('click', function(){
-    if (!flag==this){clear_dots()}
+    if (flag!=this){clear_dots()}
     add_maple_18650_V25();
     show_maple_color_comm();
     handle_add(this);
 });
 $('#maple_21700_V_25').on('click', function(){
-    if (!flag==this){clear_dots()}
+    if (flag!=this){clear_dots()}
     add_maple_21700_V25();
     show_maple_color_comm();
     handle_add(this);
 });
 $('#maple_18650_V_3').on('click', function(){
-    if (!flag==this){clear_dots()}
+    if (flag!=this){clear_dots()}
     add_maple_18650_V3();
     show_maple_color_comm();
     handle_add(this);
 });
 $('#maple_21700_V_3').on('click', function(){
-    if (!flag==this){clear_dots()}
+    if (flag!=this){clear_dots()}
     add_maple_21700_V3();
     show_maple_color_comm();
     handle_add(this);
 });
 $('#ash_18650_V_25').on('click', function(){
-    if (!flag==this){clear_dots()}
+    if (flag!=this){clear_dots()}
     add_ash_18650_V25();
     show_ash_color_comm();
     handle_add(this);
 });
 $('#ash_21700_V_25').on('click', function(){
-    if (!flag==this){clear_dots()}
+    if (flag!=this){clear_dots()}
     add_ash_21700_V25();
     show_ash_color_comm();
     handle_add(this);
 });
 $('#ash_18650_V_3').on('click', function(){
-    if (!flag==this){clear_dots()}
+    if (flag!=this){clear_dots()}
     add_ash_18650_V3();
     show_ash_color_comm();
     handle_add(this);
 });
 $('#ash_21700_V_3').on('click', function(){
-    if (!flag==this){clear_dots()}
+    if (flag!=this){clear_dots()}
     add_ash_21700_V3();
     show_ash_color_comm();
     handle_add(this);
 });
 $('#hybrid_18650_V_25').on('click', function(){
-    if (!flag==this){clear_dots()}
+    if (flag!=this){clear_dots()}
     add_hybrid_18650_V25();
     show_hybrid_comm();
     colors = [];
     handle_add(this);
 });
 $('#hybrid_21700_V_25').on('click', function(){
-    if (!flag==this){clear_dots()}
+    if (flag!=this){clear_dots()}
     add_hybrid_21700_V25();
     show_hybrid_comm();
     colors = [];
     handle_add(this);
 });
 $('#hybrid_18650_V_3').on('click', function(){
-    if (!flag==this){clear_dots()}
+    if (flag!=this){clear_dots()}
     add_hybrid_18650_V3();
     show_hybrid_comm();
     colors = [];
     handle_add(this);
 });
 $('#hybrid_21700_V_3').on('click', function(){
-    if (!flag==this){clear_dots()}
+    if (flag!=this){clear_dots()}
     add_hybrid_21700_V3();
     show_hybrid_comm();
     colors = [];
     handle_add(this);
 });
 $('#zjel_18650_V_25').on('click', function(){
-    if (!flag==this){clear_dots()}
+    if (flag!=this){clear_dots()}
     add_zjel_18650_V25();
     show_zjel_comm();
     colors = [];
     handle_add(this);
 });
 $('#zjel_21700_V_25').on('click', function(){
-    if (!flag==this){clear_dots()}
+    if (flag!=this){clear_dots()}
     add_zjel_21700_V25();
     show_zjel_comm();
     colors = [];
     handle_add(this);
 });
 $('#V3_18650_maple').on('click', function(){
-    if (!flag==this){clear_dots()}
+    if (flag!=this){clear_dots()}
     add_maple_18650_V3();
     show_V3_color();
     show_V3_comm();
     handle_add(this);
 });
 $('#V3_21700_maple').on('click', function(){
-    if (!flag==this){clear_dots()}
+    if (flag!=this){clear_dots()}
     add_maple_21700_V3();
     show_V3_color();
     show_V3_comm();
     handle_add(this);
 });
 $('#V3_18650_ash').on('click', function(){
-    if (!flag==this){clear_dots()}
+    if (flag!=this){clear_dots()}
     add_ash_18650_V3();
     show_V3_color();
     show_V3_comm();
     handle_add(this);
 });
 $('#V3_21700_ash').on('click', function(){
-    if (!flag==this){clear_dots()}
+    if (flag!=this){clear_dots()}
     add_ash_21700_V3();
     show_V3_color();
     show_V3_comm();
     handle_add(this);
 });
 $('#V3_18650_hybrid').on('click', function(){
-    if (!flag==this){clear_dots()}
+    if (flag!=this){clear_dots()}
     add_hybrid_18650_V3();
     show_V3_comm();
     handle_add(this);
@@ -249,7 +249,7 @@ $('#V3_18650_hybrid').on('click', function(){
     hide_V3_color();
 });
 $('#V3_21700_hybrid').on('click', function(){
-    if (!flag==this){clear_dots()}
+    if (flag!=this){clear_dots()}
     add_hybrid_21700_V3();
     show_V3_comm();
     handle_add(this);
@@ -257,35 +257,35 @@ $('#V3_21700_hybrid').on('click', function(){
     hide_V3_color();
 });
 $('#V25_18650_maple').on('click', function(){
-    if (!flag==this){clear_dots()}
+    if (flag!=this){clear_dots()}
     add_maple_18650_V25();
     show_V25_color();
     show_V25_comm();
     handle_add(this);
 });
 $('#V25_21700_maple').on('click', function(){
-    if (!flag==this){clear_dots()}
+    if (flag!=this){clear_dots()}
     add_maple_21700_V25();
     show_V25_color();
     show_V25_comm();
     handle_add(this);
 });
 $('#V25_18650_ash').on('click', function(){
-    if (!flag==this){clear_dots()}
+    if (flag!=this){clear_dots()}
     add_ash_18650_V25();
     show_V25_color();
     show_V25_comm();
     handle_add(this);
 });
 $('#V25_21700_ash').on('click', function(){
-    if (!flag==this){clear_dots()}
+    if (flag!=this){clear_dots()}
     add_ash_21700_V25();
     show_V25_color();
     show_V25_comm();
     handle_add(this);
 });
 $('#V25_18650_hybrid').on('click', function(){
-    if (!flag==this){clear_dots()}
+    if (flag!=this){clear_dots()}
     add_hybrid_18650_V25();
     show_V25_comm();
     handle_add(this);
@@ -293,7 +293,7 @@ $('#V25_18650_hybrid').on('click', function(){
     hide_V25_color();
 });
 $('#V25_21700_hybrid').on('click', function(){
-    if (!flag==this){clear_dots()}
+    if (flag!=this){clear_dots()}
     add_hybrid_21700_V25();
     show_V25_comm();
     handle_add(this);
@@ -301,7 +301,7 @@ $('#V25_21700_hybrid').on('click', function(){
     hide_V25_color();
 });
 $('#V25_18650_zjel').on('click', function(){
-    if (!flag==this){clear_dots()}
+    if (flag!=this){clear_dots()}
     add_zjel_18650_V25();
     show_V25_comm();
     handle_add(this);
@@ -309,7 +309,7 @@ $('#V25_18650_zjel').on('click', function(){
     hide_V25_color();
 });
 $('#V25_21700_zjel').on('click', function(){
-    if (!flag==this){clear_dots()}
+    if (flag!=this){clear_dots()}
     add_zjel_21700_V25();
     show_V25_comm();
     handle_add(this);
@@ -524,6 +524,7 @@ function apply_dots(dot_id){
         $(`#${dot_id}_${i+1}`).css('background-color', `${colors[i]}`);
     }}
 function clear_dots(){
+    console.log("clear_dots");
     $('.dot').css('background-color', '');
     colors = []
 }
