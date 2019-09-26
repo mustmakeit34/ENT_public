@@ -1,4 +1,5 @@
 import sqlite3
+from time import time
 
 def init_cart():
 	conn = sqlite3.connect('ENT_db.db')
@@ -25,3 +26,10 @@ def sql_read(read_command, *args):
 	conn.close()
 	return fetched
 
+def cleanup_db():
+	conn = sqlite3.connect('ENT_db.db')
+	conn.commit()
+	c = conn.cursor()
+	c.execute("DELETE from cart where delete_by <= ?", (time(),))
+	conn.commit()
+	conn.close()

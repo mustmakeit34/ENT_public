@@ -1,12 +1,12 @@
 import flask
-from ENT_sql import init_cart, sql_write, sql_read
+from ENT_sql import init_cart, sql_write, sql_read, cleanup_db
 from ENT_assets import build_response, html_dict, user_gen, column_dict, price_dict, color_dict
 from flask import session, request, jsonify
 from flask.json import loads, tojson_filter
 from time import time
 from waitress import serve
 
-
+last_sql_cleanup = time()
 ENT_server = flask.Flask(__name__)
 ENT_server.config['SECRET_KEY'] = 'i%fee1@h0m3n0w&uR2blAmE'
 
@@ -42,6 +42,7 @@ def lets_go(shipping):
 
 @ENT_server.route('/<path:html>.html')
 def get_html(html):
+	if last_sql_cleanup < time() - 26400: cleanup_db()
 	session_id = session.get('id', None)
 	user_ip = request.environ['REMOTE_ADDR']
 	mods = None

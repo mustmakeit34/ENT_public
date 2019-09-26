@@ -66,41 +66,34 @@ def build_response(built_template, el_type_str):
 		return response
 
 def new_user():
-	conn = sqlite3.connect('ENT_db.db')
-	c = conn.cursor()
-	c.execute("SELECT max(s_id) FROM cart")
-	max_value = c.fetchone()[0]
-	if max_value: int(max_value)
-	conn.commit()
-	conn.close()
 	while True:
-		for new_user in range((max_value+1 if max_value else 100000),1000000):
+		conn = sqlite3.connect('ENT_db.db')
+		c = conn.cursor()
+		c.execute("SELECT max(s_id) FROM cart")
+		max_value = c.fetchone()
+		if max_value: max_value = max_value[0]
+		conn.commit()
+		conn.close()
+		for new_user_id in (range(max_value+1, 1000000) if (max_value and max_value<999999) else
+		        range(find_empty_slot(), find_empty_slot()+1) if max_value else range(100000, 1000000)):
 			conn = sqlite3.connect('ENT_db.db')
 			c = conn.cursor()
-			c.execute(f"SELECT s_id FROM cart WHERE s_id='{new_user}'")
+			c.execute(f"SELECT s_id FROM cart WHERE s_id='{new_user_id}'")
 			id_already_exists = c.fetchone()
 			conn.commit()
 			conn.close()
 			if not id_already_exists:
-				yield new_user
+				yield new_user_id
 user_gen = new_user()
 
-def new_payment():
+def find_empty_slot():
 	conn = sqlite3.connect('ENT_db.db')
 	c = conn.cursor()
-	c.execute("SELECT max(t_id) FROM paid")
-	max_value = c.fetchone()[0]
-	if max_value: int(max_value)
+	c.execute(f"SELECT s_id FROM cart")
+	already_exist = c.fetchall()
+	already_exist = [i[0] for i in already_exist]
+	for slot in range(100000,1000000):
+		if slot not in already_exist:
+			return slot
 	conn.commit()
 	conn.close()
-	while True:
-		for new_transact in range((max_value+1 if max_value else 100000),1000000):
-			conn = sqlite3.connect('ENT_db.db')
-			c = conn.cursor()
-			c.execute(f"SELECT t_id FROM paid WHERE s_id='{new_transact}'")
-			id_already_exists = c.fetchone()
-			conn.commit()
-			conn.close()
-			if not id_already_exists:
-				yield new_transact
-transact_gen = new_payment()
