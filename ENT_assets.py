@@ -34,16 +34,6 @@ price_dict = {
 	"18650hybridV_25" : 230, "18650hybridV_3" : 250, "18650zjelV_25" : 175,
 }
 
-def send_message(subject:str, message:str):
-	return requests.post(
-		"https://api.mailgun.net/v3/entmods.com/messages",
-		auth=("api", "bff8039efba526de79981492d046c01b-19f318b0-c354ff42"),
-		data={"from": "Excited User <mailgun@entmods.com>",
-		      "to": "support@entmods.com",
-		      "subject": subject,
-		      "text": message}
-	)
-
 def build_response(built_template, el_type_str):
 	if el_type_str == "html":
 		response = flask.make_response(built_template)
