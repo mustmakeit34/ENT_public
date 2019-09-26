@@ -8,7 +8,7 @@ from waitress import serve
 
 last_sql_cleanup = time()
 ENT_server = flask.Flask(__name__)
-ENT_server.config['SECRET_KEY'] = 'i%fee1@h0m3n0w&uR2blAmE'
+ENT_server.config['SECRET_KEY'] = 'not_sharing_this'
 
 
 @ENT_server.route('/')
